@@ -41,8 +41,6 @@ if __name__ == '__main__':
     # Input data
     init_expt_data = pd.read_csv(args.ini_csv_path) #original data file
     proc_list = ['Reagent1 (ul)','Reagent2 (ul)','Reagent3 (ul)','Reagent4 (ul)', 'lab_code']
-    #name of the columns   這兩行解決 + bound 就可以跑看看
-
     # Randomly select a row based on the seed
     num_rows = init_expt_data.shape[0]
     random_index = torch.randint(0, num_rows, (1,)).item()
@@ -81,15 +79,7 @@ if __name__ == '__main__':
     
     print(pyfiglet.figlet_format('Optimization'))
     for generation in range(args.generation):
-        # Here we can just delete the duplicate particles especially for pop_size > 3.
-        # Create new pool and add it into the old one.
-
-        # open this to restart population (random sampling involved)
-        # pool = sort_filter_and_reappend(pool, bounds, args.radius, args.pop_size, transform)
-        
         pso = ParticleSwarmOptimization(pool, args.pso_epoch, transform, predictor, generation, radius=args.radius, sto = True) 
-        #,inertia_weight = args.inertia_weight, cognitive_weight = args.cognitive_weight, social_weight = args.social_weight) 
-
         pso.optimize()
     pool = sorted(pool, key=lambda particle: particle.best_fitness, reverse=True)
 

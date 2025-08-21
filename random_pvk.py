@@ -40,8 +40,6 @@ if __name__ == '__main__':
     # Input data
     init_expt_data = pd.read_csv(args.ini_csv_path) #original data file
     proc_list = ['Reagent1 (ul)','Reagent2 (ul)','Reagent3 (ul)','Reagent4 (ul)', 'lab_code']
-    #name of the columns   這兩行解決 + bound 就可以跑看看
-
     init_X = init_expt_data[proc_list].values
     init_y = init_expt_data['crystal_size'].values
 

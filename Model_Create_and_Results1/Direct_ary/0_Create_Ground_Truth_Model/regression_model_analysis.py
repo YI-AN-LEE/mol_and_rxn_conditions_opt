@@ -191,15 +191,13 @@ if __name__ == "__main__":
     y = reaction_data.iloc[:, -1]
     X.columns = X.columns.str.replace('[', '_').str.replace(']', '_').str.replace('<', '_')
 
-    # 檢查是否有 NaN 值
+
     nan_columns = reaction_data.columns[reaction_data.isnull().any()].tolist()
     print("Columns with NaN values:", nan_columns)
 
-    # 檢查是否有無窮大的值
     inf_columns = reaction_data.columns[(reaction_data == np.inf).any()].tolist()
     print("Columns with infinity values:", inf_columns)
 
-    # 檢查是否有超出 float32 範圍的數值
     large_value_columns = reaction_data.columns[(reaction_data > np.finfo(np.float32).max).any()].tolist()
     print("Columns with values too large for float32:", large_value_columns)
 
@@ -224,7 +222,7 @@ if __name__ == "__main__":
         model = RandomForestRegressor(**best_params)
         model.fit(X, y)
 
-        # 進行預測
+
         y_pred = model.predict(X)
         r2 = r2_score(y, y_pred)
 
@@ -244,19 +242,18 @@ if __name__ == "__main__":
         model = XGBRegressor(random_state=args.seed, **best_params)
         model.fit(X, y)
 
-        # 進行預測
+      
         y_pred = model.predict(X)
         r2 = r2_score(y, y_pred)
     else:
         raise ValueError('model_type should be rfr or xgb')
 
-    # 繪製散點圖
+
     plt.figure(figsize=(10, 8), dpi=400)
-    plt.scatter(y, y_pred, alpha=0.8, color='#0F5257', s=20)  # 調整點的顏色為 'darkorange'，大小為 80
-    plt.xlabel('Experiment Value (Percentage)')
+    plt.scatter(y, y_pred, alpha=0.8, color='#0F5257', s=20)  
     plt.ylabel('Prediction Value (Percentage)')
 
-    # 繪製對角線
+
     limits = [min(min(y), min(y_pred)), max(max(y), max(y_pred))]
     hyp_scores = cross_val_score(model, X, y, cv=10)
     if args.model_type == 'rfr':    
@@ -273,42 +270,32 @@ if __name__ == "__main__":
     std = np.std(hyp_scores)
     scores = hyp_scores
     print(f'Model: {name}\nCross-validation scores: {scores}')
-    plt.plot(limits, limits, color='#0B3142')  # 調整對角線的顏色為 'skyblue'
+    plt.plot(limits, limits, color='#0B3142')  
     plt.title(f'{name} for Yield Prediction ({feature_name} feature)')
     plt.text(0.02, 0.91, f'Regression $R^2$: {r2:.4f}\nMean cross-validation score: {mean:.4f}\nStandard deviation: {std:.4f}', transform=plt.gca().transAxes)
     plt.xlim(0, 100)
     plt.ylim(0, 100)
     plt.savefig(f'Regression_Model_Analysis/Parity_plot_{args.model_type}_{args.feature}_{args.seed}.png')
 
-    # 創建一個新的圖形和軸
+  
     fig, ax = plt.subplots(figsize=(20, 16))
 
     if args.model_type == 'xgb':
 
-        # 創建一個新的圖形和軸
         fig, ax = plt.subplots(figsize=(20, 16))
 
-        # 繪製特徵重要性
         plot_importance(model, ax=ax, importance_type='weight')
 
-        # 顯示圖片
         plt.show()
 
     elif args.model_type == 'rfr':
 
-        # 獲取特徵的重要性
         importances = model.feature_importances_
-
-        # 獲取特徵的名稱
         features = X.columns
-
-        # 將特徵的重要性和特徵的名稱組合成一個列表，並按照重要性排序
         importances_features = sorted(zip(importances, features), reverse=True)[:50]
 
-        # 將重要性和特徵名稱分開
         sorted_importances, sorted_features = zip(*importances_features)
 
-        # 繪製特徵重要性的圖表
         plt.barh(range(len(sorted_importances)), sorted_importances, align='center')
         plt.yticks(range(len(sorted_importances)), sorted_features)
         plt.xlabel('Importance')

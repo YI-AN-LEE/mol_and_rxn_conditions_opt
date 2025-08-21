@@ -40,17 +40,6 @@ if __name__ == '__main__':
 
     transform = AryTransform(vae_model, proc_feature, args.latent_size)
     predictor = AryEnsmblePredictor(vae_model, args.xgb_model_path, args.latent_size)
-
-    # # 對 ary_dataframe 中的特定欄位取對數 這個不是每個都要
-    # for column, value in proc_feature.items():
-    #     if column in ary_dataframe.columns and value == 1:
-    #         ary_dataframe[column] = ary_dataframe[column].apply(np.log)
-    # print('ary_dataframe[ligand_SMILES].values[0]', ary_dataframe['ligand_SMILES'].values[0])
-    #alternative = change_phos_to_nitrogen(ary_dataframe['ligand_SMILES'].values[0]) #problem
-    #print('Alternative Molecule: ', alternative)
-    
-    #要改vae的話改這裡
-    #dataset = hgraph.MoleculeDataset([alternative], args.vocab, args.atom_vocab, 1)
     
     smi_data =  ary_dataframe['ligand_SMILES']
     print(smi_data)
@@ -58,9 +47,6 @@ if __name__ == '__main__':
     # print('proc_feature', type(proc_feature), proc_feature)
     center_position = torch.cat((latent_vecs[0], torch.tensor(ary_dataframe[proc_feature].values, dtype=torch.float32)[0].to('cuda')), dim = 0)
 
-    # print('#########')
-    # print(ary_dataframe)
-    # print(torch.tensor(ary_dataframe[proc_feature].values))
 
     print(pyfiglet.figlet_format('Start Create Pool'))
 
@@ -72,9 +58,6 @@ if __name__ == '__main__':
     
     print(pyfiglet.figlet_format('Optimization'))
     for generation in range(args.generation):
-        # Here we can just delete the duplicate particles especially for pop_size > 3.
-        # Create new pool and add it into the old one.
-        # pool = sort_filter_and_reappend(pool, bounds, args.radius, args.pop_size, transform)
         pso = ParticleSwarmOptimization(pool, args.pso_epoch, transform, predictor, generation, radius=args.radius, sto = True)
         pso.optimize()
         print(pool)
