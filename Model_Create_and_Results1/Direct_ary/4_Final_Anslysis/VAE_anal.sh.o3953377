@@ -1,0 +1,25 @@
+==========================================================
+Starting on : Sat Jul 26 14:31:18 CST 2025
+Running on node : centos77-c9
+Current directory : /home/ianlee/opt_ian/Model_Create_and_Results1/Direct_ary/4_Final_Anslysis_Like_EDBO
+Current job ID : 3953377.centos77-h1
+==========================================================
+[14:31:20] WARNING: not removing hydrogen atom without neighbors
+[14:31:33] WARNING: not removing hydrogen atom without neighbors
+[14:31:33] WARNING: not removing hydrogen atom without neighbors
+[14:31:33] WARNING: not removing hydrogen atom without neighbors
+Traceback (most recent call last):
+  File "VAE_anal.py", line 33, in <module>
+    latent_Random = vae_model.encode_latent_mean(lines).detach().cpu().numpy()
+  File "/home/ianlee/JTVAE/JTVAE/CPU-P3/fast_jtnn/jtnn_vae.py", line 233, in encode_latent_mean
+    _, jtenc_holder, mpn_holder = tensorize(tree_batch, self.vocab, assm=False)
+  File "/home/ianlee/JTVAE/JTVAE/CPU-P3/fast_jtnn/datautils.py", line 110, in tensorize
+    set_batch_nodeID(tree_batch, vocab)
+  File "/home/ianlee/JTVAE/JTVAE/CPU-P3/fast_jtnn/datautils.py", line 138, in set_batch_nodeID
+    node.wid = vocab.get_index(node.smiles)
+  File "/home/ianlee/JTVAE/JTVAE/CPU-P3/fast_jtnn/vocab.py", line 20, in get_index
+    return self.vmap[smiles]
+KeyError: 'C1=CC2=CSCC3=NC(=CC=C3)CSCC(=C1)[N-]2'
+==========================================================
+Enging on : Sat Jul 26 14:48:43 CST 2025
+==========================================================
