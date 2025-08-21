@@ -3,12 +3,15 @@
 ## Optimization
 
 ### run
-Run the python script named objective_algorithm, for example the direct-arylation yield objective with ABC alogrithm is named 
+Run the python script named objective_algorithm, the objective names are shown as prefix as Direct-Arylation Yield: ary, Perovskite Crystal Size: pvk, for example the direct-arylation yield objective with ABC alogrithm is named ary_ABC.py
 
 ### Result Processing and Analysis
 Open Model_Create_and_Results1
 
-First preprocess the optimization output file (.o) from the prepros
+First preprocess the optimization output file (.o) from the preprocess notebook, then perform result analysis
+
+### Create New Predictor
+After each run we need to improve the current model from new data, run the create new predictor notebook
 
 ## Environments
 
