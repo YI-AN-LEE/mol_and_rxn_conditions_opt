@@ -36,7 +36,15 @@ Those commands (which are in the Scripts file) are needed to run an optimization
 ```
 Additional input for ABC, PSO, and Random can be found in the script file
 ### Result Processing and Analysis
-Open Model_Create_and_Results1
+For each optimization cycle, open Model_Create_and_Results1, then
+
+Open 1_Prerpocessing_for_Analysis for extracting top candidates from .o files
+
+Open 2_Results_Analysis for extacting the valid candidates (with the specified Mordred features) and validate from oracle model
+
+Open 3_Make_New_Data_Predictor for training a new surrogate model and generate new orcale-validated dataset
+
+Afterwards you can now run a new batch of optimization using the imporved surrogate model and dataset
 
 When running the jupyter notebook please make sure everything runs in the correct directory
 
