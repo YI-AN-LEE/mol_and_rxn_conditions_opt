@@ -43,7 +43,7 @@ For each optimization cycle, open ```Model_Create_and_Results1```, then
 
 Open ```1_Prepocessing_for_Analysis``` for extracting top candidates from .o files
 
-Open ```2_Result_Analysis``` for extacting the valid candidates (with the specified Mordred features) and validate from oracle model
+Open ```2_Results_Analysis``` for extacting the valid candidates (with the specified Mordred features) and validate from oracle model
 
 Open ```3_Make_New_Data_Predictor``` for training a new surrogate model and generate new orcale-validated dataset
 
