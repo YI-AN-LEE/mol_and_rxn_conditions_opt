@@ -38,9 +38,9 @@ Additional input for ABC, PSO, and Random can be found in the script file
 ### Result Processing and Analysis
 For each optimization cycle, open ```Model_Create_and_Results1```, then
 
-Open ```1_Prerpocessing_for_Analysis``` for extracting top candidates from .o files
+Open ```1_Prepocessing_for_Analysis``` for extracting top candidates from .o files
 
-Open ```2_Results_Analysis``` for extacting the valid candidates (with the specified Mordred features) and validate from oracle model
+Open ```2_Result_Analysis``` for extacting the valid candidates (with the specified Mordred features) and validate from oracle model
 
 Open ```3_Make_New_Data_Predictor``` for training a new surrogate model and generate new orcale-validated dataset
 
@@ -48,10 +48,7 @@ Afterwards you can now run a new batch of optimization using the imporved surrog
 
 When running the jupyter notebook please make sure everything runs in the correct directory
 
-### Create New Predictor
-After each run we need to improve the current model from new data, run the create new predictor notebook
 
-We trained 10 XGBoost models ensemble, the models could be store in the method directory (ABC, PSO, Random), cycle0 (batch 0) models and data are provided inside
 
 ## Environments
 
