@@ -18,7 +18,7 @@ from Algorithms.SA.Solution import Solution
 from Algorithms.GA.Individual import Individual
 from Algorithms.PSO.Particle import Particle
 from Environments.Direct_Arylation.lib.AryTypes import ExperimentProperty
-from Environments.Direct_Arylation.lib.utils import change_nitro_to_phos, ARY_MORDRED_FEATURE_PATH, BASE_PATH, SOLVENT_PATH, BASE_DICT_REVERSED, SOLVENT_DICT_REVERSED
+from Environments.Direct_Arylation.lib.utils import ARY_MORDRED_FEATURE_PATH, BASE_PATH, SOLVENT_PATH, BASE_DICT_REVERSED, SOLVENT_DICT_REVERSED
 from fast_jtnn import JTNNVAE
 
 class AryTransform():

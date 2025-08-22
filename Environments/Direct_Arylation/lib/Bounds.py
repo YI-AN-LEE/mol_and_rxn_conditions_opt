@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 
 from Environments.Direct_Arylation.lib.utils import BOUNBD_PATH
-# 20240418
 
 def ary_bounds_v3(bound_file_path = BOUNBD_PATH, log = True, transpose = True):
     bounds = pd.read_csv(bound_file_path)
