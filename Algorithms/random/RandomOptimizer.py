@@ -56,7 +56,7 @@ class RandomOptimizer:
                     print('end predict')
 
                     x_next = X_candidates[np.argmax(mu)]
-                    # reshape 為 (1, 37)
+    
                     x_next = x_next.reshape(1, -1)
 
                     print('x_next is',x_next)
@@ -83,7 +83,6 @@ class RandomOptimizer:
                 mu = np.array(mu)
 
                 x_next = X_candidates[np.argmax(mu)]
-                # reshape 為 (1, 37)
                 x_next = x_next.reshape(1, -1)
                 #print(x_next)
                 y_pred_next, x_prop= self.predict_fn.ensemble_predict(x_next)

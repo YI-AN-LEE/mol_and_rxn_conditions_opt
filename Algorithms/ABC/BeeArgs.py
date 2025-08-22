@@ -2,14 +2,12 @@ import argparse
 #from hgraph import common_atom_vocab
 
 def str2bool(v):
-    # 将字符串转换为布尔值
     return v.lower() in ('true', '1', 'yes')
 
 def BeeArgs():
     parser = argparse.ArgumentParser()
     parser.add_argument('--vocab', default='/home/ianlee/optimizer/OW_DOE/vae_ckpt/wen_chembl/vocab.txt',
                         help='vocab path where the motif is saved for graph generation')
-    #parser.add_argument('--atom_vocab', default=common_atom_vocab)
     parser.add_argument('--model', default='/home/ianlee/optimizer/OW_DOE/vae_data/wen_chembl/model.ckpt', 
                         help='model save path')
     parser.add_argument('--radius', default=0.25, type=float,
@@ -34,12 +32,6 @@ def BeeArgs():
     parser.add_argument('--depthT', type=int, default=20)
     parser.add_argument('--depthG', type=int, default=3)
     
-    """
-    #use for HierVAE
-    parser.add_argument('--diterT', type=int, default=1)
-    parser.add_argument('--diterG', type=int, default=3)
-    
-    """
     parser.add_argument('--dropout', type=float, default=0.0)
 
 

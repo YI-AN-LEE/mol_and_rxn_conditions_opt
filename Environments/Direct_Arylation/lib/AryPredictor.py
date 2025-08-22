@@ -43,19 +43,6 @@ class AryTransform():
             smiles_list.append(smiles) 
         return [self.cannonicalize_smiles(smiles) for smiles in smiles_list]
     
-    
-        """
-        except:
-            smiles_list = []
-            for position in positions:
-                try:
-                    smiles = self.hier_vae.decode_from_latent_vectors(position.unsqueeze(0))[0]
-                    #smiles = change_nitro_to_phos(smiles)
-                    smiles_list.append(smiles)
-                except:
-                    smiles_list.append(None)
-            return smiles_list
-        """
         
         
     def cannonicalize_smiles(self, smiles):
@@ -74,22 +61,15 @@ class AryTransform():
         Returns:
             Dataframe.
         """
-        # print('*************')
-        # print('smiles_list', smiles_list)
-        # print(process_tensor[0])
-        # print('column_names', column_names)
-        # print('========================')
         process_tensor_cpu = process_tensor.detach().cpu()
         feature_df = pd.DataFrame(data=smiles_list, columns=['ligand_SMILES'])
         feature_df = pd.concat([feature_df, pd.DataFrame(data=process_tensor_cpu.numpy(), columns=column_names)], axis=1)
-        # print('*** feature_df.columns ###',feature_df.columns)
         return feature_df
     
     def transform_psopool_to_feature(self, pool:List[Particle]):
         #total_smile_name = [particle.smiles for particle in pool]
         total_position = [particle.position for particle in pool]
         total_position = torch.stack(total_position, dim=0)
-        #total_process_position = total_position[:, self.latent_size:]
         return total_position
     
     def transform_sapool_to_feature(self, solution_pool:List[Solution]):
@@ -194,23 +174,7 @@ class AryEnsmblePredictor():
         feature_df = pd.merge(feature_df, self.solv_mordred, on='solvent_SMILES')
         feature_df = feature_df.drop(columns=['base_SMILES', 'solvent_SMILES'])
         
-        
-        #print(feature_df.columns)
-        #print(latent_points.shape)
-        #feature_df = pd.merge(feature_df, ligand_features, on='ligand_SMILES')
-        #feature_df.to_csv('/home/ianlee/optimizer/OW_DOE/test3.csv')
-        #feature_df.sort_values('reaction_index', inplace=True)
-        #feature_df.reset_index(drop=True, inplace=True)  # 重設索引
-
-        #null 先不處理
-        """
-        feature_df_nonull = feature_df.dropna()
-        feature_df_nonull = feature_df_nonull.drop(columns=['base_SMILES', 'solvent_SMILES','ligand_SMILES'])
-        feature_df_nonull = feature_df_nonull.apply(pd.to_numeric, errors='coerce')
-        feature_df_nonull = feature_df_nonull.reindex(columns=self.predictor_feature[:-2])
-        # print(feature_df_nonull[['Temp_C','Concentration']].head())
-        deleted_rows = feature_df.index[~feature_df.index.isin(feature_df_nonull.index)].tolist()
-        """
+    
         
         feature_df_nonull = np.concatenate((latent_points, feature_df), axis=1)
         
@@ -230,35 +194,6 @@ class AryEnsmblePredictor():
         #feature_df = feature_df.assign(reation_yield = yield_mean_and_std)
         total_fitness = yield_mean_and_std[:]
         total_fitness = [row[0] for row in total_fitness]
-
-        """
-        sulfoxide_smarts = 'S(=O)'
-        sulfoxide_query = Chem.MolFromSmarts(sulfoxide_smarts)
-
-        for i in range(len(feature_df)):
-            # print(feature_df.loc[i, 'ligand_SMILES'])
-            mol = Chem.MolFromSmiles(feature_df.loc[i, 'ligand_SMILES'])
-            mol_weight = Descriptors.MolWt(mol)
-            phos_atoms = [atom for atom in mol.GetAtoms() if atom.GetAtomicNum() == 15]
-
-            # Check if any phosphorus atom has 0 hydrogen atoms
-            if len(phos_atoms) == 1 and any(atom.GetTotalNumHs() == 0 for atom in phos_atoms) and not mol.HasSubstructMatch(sulfoxide_query):
-                mean = total_fitness[i]
-                total_fitness[i] = float(mean) * 1.5 # float(mean) * 1.5
-
-            if mol_weight > 600:
-                mean = total_fitness[i]
-                total_fitness[i] = float(mean) * 0.1
-
-            if not phos_atoms:
-                mean = total_fitness[i]
-                total_fitness[i] = float(mean) * 0.5
-        """
-        
-        # print('ensemble_predict')
-        # for smiles, fitness, yield_ in zip(feature_df['ligand_SMILES'], total_fitness, feature_df['reation_yield']):
-        #     print(f'{smiles}\t{fitness}\t{yield_[0]}')
-        # print('ensemble_predict')
         total_propertys = []
         # sys.exit()
         for i in range(len(total_particle_position)):
@@ -302,22 +237,6 @@ class AryEnsmblePredictor():
         feature_df = feature_df.drop(columns=['base_SMILES', 'solvent_SMILES'])
         
         
-        #print(feature_df.columns)
-        #print(latent_points.shape)
-        #feature_df = pd.merge(feature_df, ligand_features, on='ligand_SMILES')
-        #feature_df.to_csv('/home/ianlee/optimizer/OW_DOE/test3.csv')
-        #feature_df.sort_values('reaction_index', inplace=True)
-        #feature_df.reset_index(drop=True, inplace=True)  # 重設索引
-
-        #null 先不處理
-        """
-        feature_df_nonull = feature_df.dropna()
-        feature_df_nonull = feature_df_nonull.drop(columns=['base_SMILES', 'solvent_SMILES','ligand_SMILES'])
-        feature_df_nonull = feature_df_nonull.apply(pd.to_numeric, errors='coerce')
-        feature_df_nonull = feature_df_nonull.reindex(columns=self.predictor_feature[:-2])
-        # print(feature_df_nonull[['Temp_C','Concentration']].head())
-        deleted_rows = feature_df.index[~feature_df.index.isin(feature_df_nonull.index)].tolist()
-        """
         
         feature_df_nonull = np.concatenate((latent_points, feature_df), axis=1)
         
@@ -337,11 +256,6 @@ class AryEnsmblePredictor():
         #feature_df = feature_df.assign(reation_yield = yield_mean_and_std)
         total_fitness = yield_mean_and_std[:]
         total_fitness = [row[0] for row in total_fitness]
-        
-        # print('ensemble_predict')
-        # for smiles, fitness, yield_ in zip(feature_df['ligand_SMILES'], total_fitness, feature_df['reation_yield']):
-        #     print(f'{smiles}\t{fitness}\t{yield_[0]}')
-        # print('ensemble_predict')
         total_propertys = []
         # sys.exit()
         for i in range(len(total_particle_position)):

@@ -52,17 +52,7 @@ def adjust_position_and_get_smiles(total_paticle_position, bounds, radius, trans
     
     total_smiles_position = total_paticle_position[:, :latent_size]
     total_smiles = transform.get_smiles_from_position(total_smiles_position)  #get the SMILES list
-    
-    """
-    #firt time filter: put the SMILES that have error to none
-    for i in range(len(total_smiles)):
-        try:
-            #see if any kekulize or encoding error exists
-            JTVAE.encode_latent_mean([total_smiles[i]])
-        except:
-            total_smiles[i] = None
-    """
-    
+
     counts = 0
     while (isinstance(total_smiles, list) and None in total_smiles) :#or any(re.search(r'\[.*-\]', s) or '+' in s for s in total_smiles):
         print('rebuild again')
@@ -81,14 +71,7 @@ def adjust_position_and_get_smiles(total_paticle_position, bounds, radius, trans
             if smiles is not None:
                 total_smiles_position[idx] = smiles_position
                 total_smiles[idx] = smiles
-        """
-        for j in range(len(total_smiles)):
-            try:
-                #see if any kekulize or encoding error exists
-                JTVAE.encode_latent_mean([total_smiles[j]])
-            except:
-                total_smiles[j] = None
-        """
+
         counts += 1
     total_paticle_position[:, :latent_size] = total_smiles_position
     return total_paticle_position, total_smiles

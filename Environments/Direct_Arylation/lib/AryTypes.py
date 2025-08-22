@@ -7,9 +7,6 @@ class ExperimentProperty:
     Concentration: float
     Base: float
     Solvent: float
-    #SpAbs_A: float
-    #AATS0dv: float
-    #ABC : float
     reation_yield: tuple
 
     def __str__(self) -> str:

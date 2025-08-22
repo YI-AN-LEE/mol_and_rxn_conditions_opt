@@ -21,22 +21,7 @@ class Particle:
         self.bounds = self.bounds.to(torch.float32)
         self.bounds = self.bounds.to(self.device)
         self.velocity = torch.tensor([random.uniform(-1, 1) for _ in range(len(position))]).to('cuda')
-        
-        """
-        if expt_df is not None:
-            self.best_expt_property = ExperimentProperty(
-                ABC  = expt_df['ABC'],
-                Base = expt_df['Base'],
-                Solvent = expt_df['Solvent'],
-                SpAbs_A = expt_df['SpAbs_A'],
-                AATS0dv = expt_df['AATS0dv'],
-                Temperature = expt_df['Temperature'],
-                Concentration = expt_df['Concentration'],
-                reation_yield = (expt_df['reation_yield'][0], expt_df['reation_yield'][1]) if isinstance(expt_df['reation_yield'], tuple) else (expt_df['reation_yield'], 0),
-            )
-            self.best_smiles = expt_df['SMILES']
-        """
-        
+
         self.best_expt_property = None
         self.best_smiles = None
         
@@ -58,50 +43,7 @@ class Particle:
         social_component = social_weight * r2 * (global_best_position - self.position) # global best
         self.velocity = inertia_weight * self.velocity + cognitive_component + social_component
         self.velocity = self.velocity
-        # self.velocity[:32] = 0
-
-    def update_position_sto(self, mult):
-        # 取得 scaling_factors：每一維度的範圍除以 2
-        # 擴展成跟 position 同樣大小
-        #scaling_factors = scaling_factors.unsqueeze(0).expand_as(self.position)  # shape: (num_particles, dim)
-
-        epsilon_vector = torch.ones_like(self.position)
-
-        # 對 VAE 維度設小一點的 epsilon
-        vae_dim = 37  # 假設前128維是分子 latent space
-        epsilon_vector[:vae_dim] = 0.01
-        epsilon_vector[vae_dim:] = 0.25
-
-        # 每個維度都有自己的 scaling factor 與 epsilon
-        stochastic_noise = epsilon_vector * self.scaling_factors * torch.randn_like(self.position)
-
-        # 更新位置
-        self.position = self.position + self.velocity * mult + stochastic_noise
-
-
-        # Check that the positions are within bounds using while loop
-        for i in range(-1 * len(self.bounds), 0):
-            while True:
-                if self.position[i] > self.bounds[i][0]:  # upper bound
-                    excess = self.position[i] - self.bounds[i][0]
-                    self.position[i] -= 2 * excess
-                    # 防止浮點誤差，若仍超出，再修正一次
-                    if self.position[i] > self.bounds[i][0]:
-                        self.position[i] = self.bounds[i][0]
-                elif self.position[i] < self.bounds[i][1]:  # lower bound
-                    deficit = self.bounds[i][1] - self.position[i]
-                    self.position[i] += 2 * deficit
-                    if self.position[i] < self.bounds[i][1]:
-                        self.position[i] = self.bounds[i][1]
-                else:
-                    # 在範圍內，跳出 while
-                    break
-                # print(f'{self.position[i]} should > {self.bounds[i][1]}')
-        # if self.position[-1] > 0.5: # here sould be change in the future for the binary feature involving
-        #     self.position[-1] = 1
-        # elif self.position[-1] < 0.5:
-        #     self.position[-1] = 0
-            
+        # self.velocity[:32] = 0            
 
     def update_position(self, mult):
         self.position = self.position + self.velocity * mult 
@@ -112,7 +54,6 @@ class Particle:
                 if self.position[i] > self.bounds[i][0]:  # upper bound
                     excess = self.position[i] - self.bounds[i][0]
                     self.position[i] -= 2 * excess
-                    # 防止浮點誤差，若仍超出，再修正一次
                     if self.position[i] > self.bounds[i][0]:
                         self.position[i] = self.bounds[i][0]
                 elif self.position[i] < self.bounds[i][1]:  # lower bound
@@ -121,11 +62,6 @@ class Particle:
                     if self.position[i] < self.bounds[i][1]:
                         self.position[i] = self.bounds[i][1]
                 else:
-                    # 在範圍內，跳出 while
                     break
-                # print(f'{self.position[i]} should > {self.bounds[i][1]}')
-        # if self.position[-1] > 0.5: # here sould be change in the future for the binary feature involving
-        #     self.position[-1] = 1
-        # elif self.position[-1] < 0.5:
-        #     self.position[-1] = 0
+
             

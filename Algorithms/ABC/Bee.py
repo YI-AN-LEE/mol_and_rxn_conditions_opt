@@ -64,10 +64,3 @@ class Bee:
                 self.candidate_position[i] += 2 * deficit # original method
                 if self.candidate_position[i] < self.bounds[i][1]:
                     self.candidate_position[i] = self.bounds[i][1]
-
-        # # Use regression with a cutoff to get the binary feature
-        # for index in self.binary:
-        #     if self.candidate_position[index] > 0.5: # here sould be change in the future for the binary feature involving
-        #         self.candidate_position[index] = 1
-        #     elif self.candidate_position[index] < 0.5:
-        #         self.candidate_position[index] = 0

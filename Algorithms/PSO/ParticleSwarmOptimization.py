@@ -16,10 +16,10 @@ class ParticleSwarmOptimization:
             predictor: Pvk_Ensemble_Predictor,
             generation,
             radius = 0.25,
-            inertia_weight = 1,  # we can try another 0.45 1 0.5 0.25
-            cognitive_weight = 2, #0.6 2.0 1.0 0.5 
-            social_weight = 2,  #0.6 2.0 1.0 0.5, 
-            mult = 0.125, #control 縮放倍率,
+            inertia_weight = 1,  
+            cognitive_weight = 2, 
+            social_weight = 2,  
+            mult = 0.125, 
             EI = False,
             sto = False,
             f_best = None,
@@ -78,28 +78,6 @@ class ParticleSwarmOptimization:
                 particle.best_position = particle.position.clone()
                 particle.best_fitness = fitness
                 particle.best_expt_property = expt_porperty
-
-    # def ensure_particles_with_smiles(self):
-    #     '''
-    #     Let particles that cannot obtain smiles find nearby locations where they can be decoded back to smlies
-    #     '''
-    #     total_smiles_position = torch.stack([particle.position[:32] for particle in self.pool])
-    #     total_smiles = self.transform.get_smiles_from_position(total_smiles_position)
-        
-    #     while isinstance(total_smiles, list) and None in total_smiles:
-    #         none_indicy = [index for index, smiles in enumerate(total_smiles) if smiles is None]
-    #         none_position = total_smiles_position[none_indicy]
-    #         random_noise = torch.randn_like(none_position) * self.radius
-    #         scaling_factor = torch.tensor([random.uniform(0, 1) for _ in range(none_position)]).to('cuda:0')
-    #         none_position = none_position + random_noise * scaling_factor.unsqueeze(1)
-    #         none_smiles = self.transform.get_smiles_from_position(none_position)
-    #         for idx, smiles_position, smiles in zip(none_indicy, none_position, none_smiles):
-    #             if smiles is not None:
-    #                 total_smiles_position[idx] = smiles_position
-    #                 total_smiles[idx] = smiles
-    #     for particle, smile_position, smiles in zip(self.pool, total_smiles_position, total_smiles):
-    #         particle.position[:32] = smile_position
-    #         particle.smiles = smiles
 
     def ensure_particles_with_smiles(self):
         total_smiles_position = torch.stack([particle.position[:32] for particle in self.pool])

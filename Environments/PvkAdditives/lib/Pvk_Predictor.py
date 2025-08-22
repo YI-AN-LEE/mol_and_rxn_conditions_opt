@@ -56,7 +56,7 @@ class Pvk_Ensemble_Predictor():
             self.pvk_size_models.append(model)
 
     def ensemble_predict(self, total_particle_position):
-        # 前面會送一個numpy array進來
+
         
         #result prediction
         feature = total_particle_position.detach().cpu().numpy()
@@ -129,7 +129,6 @@ class Pvk_Ensemble_Predictor():
         return ei*scale
 
     def ensemble_predict_EI(self, total_particle_position, f_best):
-        # 前面會送一個numpy array進來
         
         #result prediction
         feature = total_particle_position.detach().cpu().numpy()
@@ -245,124 +244,3 @@ class PvkTransform():
         total_process_position = total_position[:, self.latent_size:]
         return self.to_dataframe(total_smile_name, total_process_position, self.pvk_feature_list)
     
-# class PvkTransformBay():
-#     def __init__(self, hier_vae) -> None:
-#         self.hier_vae : HierVAE = hier_vae
-#         self.pvk_feature_list = ['Reagent1 (ul)','Reagent2 (ul)','Reagent3 (ul)','Reagent4 (ul)','lab_code']
-#         self.radius = 1
-
-#     def get_smiles_from_position(self, positions):
-#         '''
-#         Decode the SMILES from the latent points in the HierVAE model. Sometimes the decoding may fail.
-#         :param positions: A list of torch tensors of latent points.
-#         :return: A list of decoded SMILES.
-#         '''
-#         try:
-#             smiles_list = self.hier_vae.decode_from_latent_vectors(positions)
-#             return [self.cannonicalize_smiles(smiles) for smiles in smiles_list]
-#         except:
-#             return [None] * len(positions)
-        
-#     def cannonicalize_smiles(self, smiles):
-#         '''
-#         Ensure that different chemical structures have the same representation.
-#         '''
-#         return Chem.MolToSmiles(Chem.MolFromSmiles(smiles))
-    
-#     def to_dataframe(self, smiles_list, process_tensor:torch.Tensor, column_names):
-#         """
-#         Convert smiles list and process tensor to dataframe.
-#         Args:
-#             smiles_list: The list to be converted.
-#             process_tensor: The tensor to be converted.
-#             column_names: The column names of tensor_data.
-#         Returns:
-#             Dataframe.
-#         """
-#         process_tensor_cpu = process_tensor.detach().cpu()
-#         feature_df = pd.DataFrame(data=smiles_list, columns=['SMILES'])
-#         feature_df = pd.concat([feature_df, pd.DataFrame(data=process_tensor_cpu.numpy(), columns=column_names)], axis=1)
-#         return feature_df
-    
-#     def exp_tensor(self, tensor, dim=None):
-#         if dim is None:
-#             return torch.exp(tensor)
-#         else:
-#             return torch.exp(tensor[:, dim[0]:dim[1]])
-        
-#     def ensure_particles_with_smiles(self, d2_tensor: torch.Tensor):
-#         '''
-#         Let particles that cannot obtain smiles find nearby locations where they can be decoded back to smlies
-#         '''
-#         counts = 0
-#         self.radius = 1
-#         total_smiles_position = torch.stack([sample[:32] for sample in d2_tensor])
-#         total_smiles = self.get_smiles_from_position(total_smiles_position)
-#         while isinstance(total_smiles, list) and None in total_smiles:
-#             counts += 1
-#             if counts > 100:
-#                 self.radius += 1
-#             none_indicy = [index for index, smiles in enumerate(total_smiles) if smiles is None]
-#             none_position = total_smiles_position[none_indicy]
-#             random_noise = torch.randn_like(none_position) * self.radius
-#             scaling_factor = torch.tensor([random.uniform(0, 1) for _ in range(len(none_position))]).to('cuda:0')
-#             none_position = none_position + random_noise * scaling_factor.unsqueeze(1)
-#             none_smiles = self.get_smiles_from_position(none_position)
-#             for idx, smiles_position, smiles in zip(none_indicy, none_position, none_smiles):
-#                 if smiles is not None:
-#                     total_smiles_position[idx] = smiles_position
-#                     total_smiles[idx] = smiles
-#         for index, (smile_position, smiles) in enumerate(zip(total_smiles_position, total_smiles)):
-#             with torch.no_grad():
-#                 d2_tensor[index][:32] = smile_position.clone().detach()
-#             # particle.smiles = smiles
-#         print(total_smiles)
-#         return d2_tensor
-    
-#     def transform_tensor_to_feature(self, pool:torch.Tensor):
-#         total_position = [sample for sample in pool]
-#         total_position = torch.stack(total_position, dim=0)
-#         total_smile_position = total_position[:, :32]
-#         total_process_position = total_position[:, 32:]
-#         total_smile_name = self.get_smiles_from_position(total_smile_position)
-#         feature_df = self.to_dataframe(total_smile_name, total_process_position, self.pvk_feature_list)
-#         return feature_df
-    
-# class Pvk_Ground_Truth_Predictor():
-#     def __init__(self, model_path):
-#         self.model_path = model_path
-#         self.feature_df: pd.DataFrame = None
-#         self.pvk_size_model: RandomForestRegressor = None
-#         self.pvk_size_feature_list = ['Reagent1 (ul)','Reagent2 (ul)','Reagent3 (ul)','Reagent4 (ul)','lab_code','ATSC5v', 'AATSC5Z', 'MATS8se']
-#         # self.pvk_score_feature_list = ['Reagent1 (ul)','Reagent2 (ul)','Reagent3 (ul)','Reagent4 (ul)','AATS2p','ATSC5Z','ATSC3pe','ATSC5pe'] # scoreeeeeeeeeeeeeeee
-#         self.load_model()
-
-#     def load_model(self):
-#         with open(self.model_path, "rb") as f:
-#             self.pvk_size_model = pickle.load(f)
-
-#     def ground_truth_predict(self, feature_df:pd.DataFrame):
-#         # modred feature calculating
-#         calc = Calculator(descriptors, ignore_3D=True)
-#         smiles_list = list(feature_df['SMILES'])
-#         mols = [Chem.MolFromSmiles(smi) for smi in smiles_list]
-#         modred_df = calc.pandas(mols)
-
-#         # processing feature creating
-#         feature_df = feature_df.drop("SMILES", axis=1)
-#         feature_df = feature_df.join(modred_df)
-
-#         # scroe predict
-#         size_features = feature_df[self.pvk_size_feature_list]
-#         size_features = size_features.apply(pd.to_numeric, errors='coerce')
-#         print('size_features', size_features)
-#         size_features_nonull = size_features.dropna()
-#         # size_features.to_csv('/home/chenyo/PvkAdditives-main/bot_cuda_random_forrest/size_features.csv')
-#         deleted_rows = size_features.index[~size_features.index.isin(size_features_nonull.index)].tolist()
-#         print('deleted_rowsdeleted_rows',deleted_rows)
-#         print('size_features_nonull column',size_features_nonull)
-#         # print('self.pvk_size_model column',self.pvk_size_model.feature_names_in_)
-#         result = self.pvk_size_model.predict(size_features_nonull)
-#         for position in deleted_rows:
-#             result = np.insert(result, position, 0)
-#         return result

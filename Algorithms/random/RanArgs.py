@@ -2,7 +2,6 @@ import argparse
 #from hgraph import common_atom_vocab
 
 def str2bool(v):
-    # 将字符串转换为布尔值
     return v.lower() in ('true', '1', 'yes')
 
 def RanArgs():

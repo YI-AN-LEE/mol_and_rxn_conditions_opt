@@ -11,14 +11,6 @@ from Environments.Direct_Arylation.lib.AryPredictor import AryTransform, AryEnsm
 
 
 def create_first_particle(vae_vector, process_cond, bounds, freeze, smile):
-    '''
-    Input is one VAE vector of lever,
-    one experiment data,
-    the log bound for the last 11 position,
-    fitness function,
-    freeze the process condition or not
-    Output is the first particle we will put in.
-    '''
     vae_vector = vae_vector
     process_cond = torch.tensor(process_cond).to('cuda')
     initial_particle_position = torch.cat((vae_vector.float(), process_cond.float()), dim=1)
@@ -38,10 +30,6 @@ def create_tensor(center_particle: Particle, bounds, freeze, radius, pop_size, t
     total_paticle_position = center_particle.position.clone() # torch.Size([43])
     total_paticle_position = torch.stack([total_paticle_position] * pop_size) # torch.Size([pop_size, 43])
     total_paticle_position, total_smiles = adjust_position_and_get_smiles(total_paticle_position, bounds, radius, transform)
-    #torch.save(total_paticle_position, f'/home/ianlee/opt_ian/Environments/PvkAdditives/cycle0/total_paticle_position_{today}.pt')
-    #print('total_smiles', total_smiles)
-    #with open(f"/home/ian_lee/opt_ian/Environments/PvkAdditives/cycle0/total_smiles_{today}.pkl", "wb") as f:
-        #pickle.dump(total_smiles, f)
     return total_paticle_position, total_smiles
 
 def sort_filter_and_reappend(pool:List[Particle], bounds, radius, pop_size, transform:PvkTransform) -> List[Particle]:
@@ -79,9 +67,6 @@ def sort_filter_and_reappend(pool:List[Particle], bounds, radius, pop_size, tran
 
 def adjust_position_and_get_smiles(total_paticle_position, bounds, radius, transform:PvkTransform):
     random_noise = torch.randn_like(total_paticle_position) * radius
-    #scaling_factors = torch.tensor([random.uniform(0, 1) for _ in range(len(total_paticle_position))]).to('cuda:0')
-    #total_paticle_position = total_paticle_position + random_noise * scaling_factors.unsqueeze(1)
-    # Check the range of all initial process condition.
 
     scaling_factors = torch.full((total_paticle_position.shape[1],), 2.0, device='cuda:0') # 2 is the std of the vae ls vector
     for i in range(-bounds.shape[0], 0):
@@ -119,44 +104,6 @@ def adjust_position_and_get_smiles(total_paticle_position, bounds, radius, trans
     total_paticle_position[:, :32] = total_smiles_position
     return total_paticle_position, total_smiles
 
-# def get_neg_and_pos_of_latnet_vector(center_particle: Particle, bounds, freeze, radius, pop_size, transform:PvkTransform) -> List[str]:
-#     # Generate all initial particles' position.
-#     total_paticle_position = center_particle.position.clone() # torch.Size([43])
-#     total_paticle_position = torch.stack([total_paticle_position] * pop_size) # torch.Size([pop_size, 43])
-#     random_noise = torch.randn_like(total_paticle_position) * radius
-#     scaling_factors = torch.tensor([random.uniform(0, 1) for _ in range(len(total_paticle_position))]).to('cuda:0')
-#     total_paticle_position = total_paticle_position + random_noise * scaling_factors.unsqueeze(1)
-#     total_smiles_position = total_paticle_position[:, :32]
-#     new_data = []
-#     for single_pos in total_smiles_position:
-#         single_pos = single_pos.unsqueeze(0)
-#         try:
-#             single_smile = transform.get_smiles_from_position(single_pos)
-#             new_data.append({"vector": single_pos.tolist(), "smiles": single_smile})
-#         except:
-#             single_smile = None
-#             new_data.append({"vector": single_pos.tolist(), "smiles": None})
-
-#     try:
-#         with open("/home/chenyo/OW_DOE/Algorithms/CON_BO/vae_con_neg_x/x_y.json", "r") as f:
-#             data = json.load(f)
-#         data = data + new_data
-#         with open("/home/chenyo/OW_DOE/Algorithms/CON_BO/vae_con_neg_x/x_y.json", "w") as f:
-#             json.dump(data, f, indent=4)
-#     except:
-#         data = []
-#         data = data + new_data
-#         with open("x_y.json", "w") as f:
-#             json.dump(data, f, indent=4)
-
-# def create_right_feature_tensor(center_particle: Particle, bounds, freeze, radius, pop_size, transform:PvkTransform) -> List[Particle]:
-#     # Generate all initial particles' position.
-#     today = datetime.date.today()
-#     today = today.strftime("%Y%m%d")
-#     total_paticle_position = center_particle.position.clone() # torch.Size([43])
-#     total_paticle_position = torch.stack([total_paticle_position] * pop_size) # torch.Size([pop_size, 43])
-#     total_paticle_position, total_smiles = adjust_position_and_get_smiles(total_paticle_position, bounds, radius, transform)
-#     return total_paticle_position, total_smiles
 
 def generate_initial_particle_pool(total_position_tensor, total_expt_df, bounds, pop_size):
     '''
@@ -169,7 +116,7 @@ def generate_initial_particle_pool(total_position_tensor, total_expt_df, bounds,
     particle_pool = random.sample(particle_pool, min(pop_size, len(particle_pool)))
     return particle_pool
 
-# 20240320
+
 def create_pool_v2(center_position, pop_size, bounds, radius, transform:PvkTransform, predictor:Pvk_Ensemble_Predictor) -> List[Particle]:
     #with torch.no_grad():
     #center_position[32:36] = torch.log(center_position[32:36])
@@ -184,7 +131,6 @@ def create_pool_v2(center_position, pop_size, bounds, radius, transform:PvkTrans
     return pool
 
 # 20240615 ary datasets
-# prepare EI part
 def create_pool_v3(center_position, pop_size, bounds, radius, transform:AryTransform, predictor:AryEnsmblePredictor, proc_feature_list) -> List[Particle]:
     # Generate the initial pool.
     total_particle_position = torch.stack([center_position] * pop_size)
