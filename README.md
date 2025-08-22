@@ -4,6 +4,20 @@
 
 ## Optimization
 
+### Requirements
+A conda environment is recommended
+Check the environment.yml file
+The system can run with primarily
+ - python=3.8.6
+ - numpy==1.20.3
+ - pandas=1.1.3
+ - xgboost=1.5.0
+ - pytorch=1.12.0
+ - jupyter==1.0.0
+ - scipy==1.4.1
+ - scikit-learn=1.0.2
+ - tensorflow==2.2.0
+
 ### Run
 Run the python script named objective_algorithm, the objective names are shown as prefix as Direct-Arylation Yield: ary, Perovskite Crystal Size: pvk, for example the direct-arylation yield objective with ABC alogrithm is named ary_ABC.py
 
@@ -14,7 +28,7 @@ Those commands (which are in the Scripts file) are needed to run an optimization
 --ini_csv_path  csv_which contain_all_oracle-validated_data
 --xgb_model_path surrogate_model_path
 --vocab VAE_vocab_set
---latent_size 32 
+--latent_size_32 
 --model VAE_model
 ```
 Additional input for ABC, PSO, and Random can be found in the script file
