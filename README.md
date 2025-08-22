@@ -21,8 +21,6 @@ The system can run with primarily
 ### Run
 Run the python script named objective_algorithm, the objective names are shown as prefix as Direct-Arylation Yield: ary, Perovskite Crystal Size: pvk, for example the direct-arylation yield objective with ABC alogrithm is named ary_ABC.py
 
-When running the file please make sure everything runs in the correct directory, please check if the directories assigned in all python scripts in /Algorithm and /Environment/lib are correct
-
 Those commands (which are in the Scripts file) are needed to run an optimization job
 
 ```
@@ -36,6 +34,8 @@ Those commands (which are in the Scripts file) are needed to run an optimization
 Additional input for ABC, PSO, and Random can be found in the script file
 ### Result Processing and Analysis
 Open Model_Create_and_Results1
+
+When running the jupyter notebook please make sure everything runs in the correct directory
 
 First preprocess the optimization output file (.o) from the preprocess notebook, then perform result analysis
 
