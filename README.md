@@ -20,9 +20,9 @@ The system can run with primarily
  - tensorflow==2.2.0
 
 ### Run
-Run the python script named objective_algorithm, the objective names are shown as prefix as Direct-Arylation Yield: ary, Perovskite Crystal Size: pvk, for example the direct-arylation yield objective with ABC alogrithm is named ary_ABC.py
+Run the python script named objective_algorithm, the objective names are shown as prefix as ```Direct-Arylation Yield: ary```,```Perovskite Crystal Size: pvk```, for example the direct-arylation yield objective with ABC alogrithm is named ```ary_ABC.py```
 
-For the arylation task it is required to specify the utilities file directory in ```/Direct_Arylation/libs/utils.py```
+For the arylation task it is required to specify the utilities file directory in ```Environment/Direct_Arylation/libs/utils.py```
 
 Those commands (which are in the Scripts file) are needed to run an optimization job
 
@@ -48,8 +48,6 @@ Afterwards you can now run a new batch of optimization using the imporved surrog
 
 When running the jupyter notebook please make sure everything runs in the correct directory
 
-First preprocess the optimization output file (.o) from the preprocess notebook, then perform result analysis
-
 ### Create New Predictor
 After each run we need to improve the current model from new data, run the create new predictor notebook
 
@@ -61,11 +59,11 @@ We trained 10 XGBoost models ensemble, the models could be store in the method d
 Predictor and decoder functions are stored in ```Environments/objective_name/libs```
 
 ### Optimization Algorithm
-Algorithm script is in the Algortihm/ 
+Algorithm script is in the ```Algortihm/ ```
 
 ### Molecular VAE
 VAE for optimizing (GPU-based) is in the fast-jtnn file, which is improved from the original python 2 version by CBIIT team (https://github.com/CBIIT/JTVAE), thanks for thier contribution!
 
-To train the VAE please visit CBIIT github page which they offer head-to-tail tutorials. Here we offer the model trained for this work and the vocabulary set (the two files are essential for using VAE in this work) in the VAE_model file
+To train the VAE please visit CBIIT github page which they offer head-to-tail tutorials. Here we offer the model trained for this work and the vocabulary set (the two files are essential for using VAE in this work) in ```VAE_model/``` 
 
 To use the VAE in jupyter via CPU it is needed to use the VAE architecture in ```VAE_model/cpu/fast-jtnn```
