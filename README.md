@@ -15,7 +15,8 @@ The system can run with primarily
  - pytorch=1.12.0
  - jupyter==1.0.0
  - scipy==1.4.1
- - scikit-learn=1.0.2
+ - scikit-learn==1.0.2
+ - Mordred
  - tensorflow==2.2.0
 
 ### Run
