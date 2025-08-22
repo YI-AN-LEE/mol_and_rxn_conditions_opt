@@ -5,8 +5,8 @@
 ## Optimization
 
 ### Requirements
-A conda environment is recommended
-Check the environment.yml file
+A conda environment is recommended, check the environment.yml file
+
 The system can run with primarily
  - python=3.8.6
  - numpy==1.20.3
@@ -20,6 +20,8 @@ The system can run with primarily
 
 ### Run
 Run the python script named objective_algorithm, the objective names are shown as prefix as Direct-Arylation Yield: ary, Perovskite Crystal Size: pvk, for example the direct-arylation yield objective with ABC alogrithm is named ary_ABC.py
+
+When running the file please make sure everything runs in the correct directory, please check if the directories assigned in all python scripts in /Algorithm and /Environment/lib are correct
 
 Those commands (which are in the Scripts file) are needed to run an optimization job
 
