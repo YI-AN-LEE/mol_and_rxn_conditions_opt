@@ -34,6 +34,9 @@ Those commands (which are in the Scripts file) are needed to run an optimization
 --latent_size_32 
 --model VAE_model
 ```
+
+Note that the surrogate model is an ensemble of 10 XGBoost models, so the command reads in a file directory while the VAE model command reads one VAE model
+
 Additional input for ABC, PSO, and Random can be found in the script file
 ### Result Processing and Analysis
 For each optimization cycle, open ```Model_Create_and_Results1```, then
