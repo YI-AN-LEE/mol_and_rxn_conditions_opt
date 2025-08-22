@@ -22,7 +22,7 @@ The system can run with primarily
 ### Run
 Run the python script named objective_algorithm, the objective names are shown as prefix as Direct-Arylation Yield: ary, Perovskite Crystal Size: pvk, for example the direct-arylation yield objective with ABC alogrithm is named ary_ABC.py
 
-For the arylation task it is required to specify the utilities file directory in /Direct_Arylation/libs/utils.py
+For the arylation task it is required to specify the utilities file directory in ```/Direct_Arylation/libs/utils.py```
 
 Those commands (which are in the Scripts file) are needed to run an optimization job
 
@@ -36,13 +36,13 @@ Those commands (which are in the Scripts file) are needed to run an optimization
 ```
 Additional input for ABC, PSO, and Random can be found in the script file
 ### Result Processing and Analysis
-For each optimization cycle, open Model_Create_and_Results1, then
+For each optimization cycle, open ```Model_Create_and_Results1```, then
 
-Open 1_Prerpocessing_for_Analysis for extracting top candidates from .o files
+Open ```1_Prerpocessing_for_Analysis``` for extracting top candidates from .o files
 
-Open 2_Results_Analysis for extacting the valid candidates (with the specified Mordred features) and validate from oracle model
+Open ```2_Results_Analysis``` for extacting the valid candidates (with the specified Mordred features) and validate from oracle model
 
-Open 3_Make_New_Data_Predictor for training a new surrogate model and generate new orcale-validated dataset
+Open ```3_Make_New_Data_Predictor``` for training a new surrogate model and generate new orcale-validated dataset
 
 Afterwards you can now run a new batch of optimization using the imporved surrogate model and dataset
 
@@ -58,7 +58,7 @@ We trained 10 XGBoost models ensemble, the models could be store in the method d
 ## Environments
 
 ### Predictor and Decoder
-Predictor and decoder functions are stored in Environments/objective_name/libs
+Predictor and decoder functions are stored in ```Environments/objective_name/libs```
 
 ### Optimization Algorithm
 Algorithm script is in the Algortihm/ 
@@ -68,4 +68,4 @@ VAE for optimizing (GPU-based) is in the fast-jtnn file, which is improved from 
 
 To train the VAE please visit CBIIT github page which they offer head-to-tail tutorials. Here we offer the model trained for this work and the vocabulary set (the two files are essential for using VAE in this work) in the VAE_model file
 
-To use the VAE in jupyter via CPU it is needed to use the VAE architecture in VAE_model/cpu/fast-jtnn
+To use the VAE in jupyter via CPU it is needed to use the VAE architecture in ```VAE_model/cpu/fast-jtnn```
