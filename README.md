@@ -21,6 +21,8 @@ The system can run with primarily
 ### Run
 Run the python script named objective_algorithm, the objective names are shown as prefix as Direct-Arylation Yield: ary, Perovskite Crystal Size: pvk, for example the direct-arylation yield objective with ABC alogrithm is named ary_ABC.py
 
+For the arylation task it is required to specify the utilities file directory in /Direct_Arylation/libs/utils.py
+
 Those commands (which are in the Scripts file) are needed to run an optimization job
 
 ```
