@@ -8,13 +8,16 @@
 Run the python script named objective_algorithm, the objective names are shown as prefix as Direct-Arylation Yield: ary, Perovskite Crystal Size: pvk, for example the direct-arylation yield objective with ABC alogrithm is named ary_ABC.py
 
 Those commands (which are in the Scripts file) are needed to run an optimization job
-{--seed seed number to assign
-        --ini_csv_path  csv which contain all oracle-validated data
-        --xgb_model_path surrogate model path
-        --vocab VAE vocab set
-        --latent_size 32 (our model)
-        --model VAE model }
 
+```
+--seed seed_number_to_assign
+--ini_csv_path  csv_which contain_all_oracle-validated_data
+--xgb_model_path surrogate_model_path
+--vocab VAE_vocab_set
+--latent_size 32 
+--model VAE_model
+```
+Additional input for ABC, PSO, and Random can be found in the script file
 ### Result Processing and Analysis
 Open Model_Create_and_Results1
 
