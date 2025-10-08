@@ -1,4 +1,4 @@
-# Continous Optimization of Molecular Structures and Process Conditions via Latent Space Surrogates
+# Joint Optimization of Molecular Structures and Process Conditions Using Variational Autoencoders and Swarm-Based Algorithms
 
 <img width="6691" height="3584" alt="demo VAE +proc" src="https://github.com/user-attachments/assets/038c5d59-2ad1-4709-a7cf-9fad51f339a8" />
 
