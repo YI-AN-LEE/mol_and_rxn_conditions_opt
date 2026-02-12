@@ -35,7 +35,7 @@ class ArtificialBeeColony:
         self.bounds = self.bounds.to(self.device)
         self.JTVAE: JTNNVAE = JTVAE
 
-    def employed_phase(self):
+    def employed_phase(self,freeze=None, decode = 'yes'):
         for bee in self.employed_bees:
             if bee.trail < self.max_trails:
                 # choose a random bee that is not the current bee, j is the index of the random bee
@@ -48,13 +48,20 @@ class ArtificialBeeColony:
                         print('find the same bee 100 times')
                         break
                     #may stuck here, which is ,always find the same bee ._.
-                bee.get_candidate_position(self.employed_bees[j].position)
+                if freeze is None:
+                    bee.get_candidate_position(self.employed_bees[j].position)
+                else:
+                    bee.get_candidate_position_freeze(self.employed_bees[j].position, freeze)
                 #sometime the loop cannot get out
-        with TemporarilySetAttribute(self, 'employees_phase', True):
-            self.ensure_bee_with_smiles()
-            self.evaluate_fitness_and_trail()
+        if decode == 'yes':
+            with TemporarilySetAttribute(self, 'employees_phase', True):
+                self.ensure_bee_with_smiles()
+                self.evaluate_fitness_and_trail()
+        else:
+            with TemporarilySetAttribute(self, 'employees_phase', True):
+                self.evaluate_fitness_and_trail()
 
-    def onlooker_phase(self):
+    def onlooker_phase(self, freeze=None, decode = 'yes'):
         probabilities = np.array([bee.fitness for bee in self.employed_bees])
         probabilities = probabilities / np.sum(probabilities)
         for bee in self.onlooker_bees:
@@ -63,21 +70,38 @@ class ArtificialBeeColony:
                 # set a function to control the radius with time (when iteration 50 use 1/2 radius)
                 # if iteration = 50:
                 #     bee.radius = bee.radius/2
-                with TemporarilySetAttribute(bee, 'radius', bee.radius * random.uniform(0, 1)):
+                if freeze is None:
                     bee.get_candidate_position(chosen_bee.position)
-        with TemporarilySetAttribute(self, 'onlookers_phase', True):
-            self.ensure_bee_with_smiles()
-            self.evaluate_fitness_and_trail()
+                else:
+                    bee.get_candidate_position_freeze(chosen_bee.position, freeze)
+        if decode == 'yes':
+            with TemporarilySetAttribute(self, 'onlooker_phase', True):
+                self.ensure_bee_with_smiles()
+                self.evaluate_fitness_and_trail()
+        else:
+            with TemporarilySetAttribute(self, 'onlooker_phase', True):
+                self.evaluate_fitness_and_trail()
 
-    def scout_phase(self):
+    def scout_phase(self, freeze=None, decode = 'yes'):
         for bee in self.employed_bees:
             if bee.trail >= self.max_trails:
-                bee.position = torch.rand(len(self.bounds), device=self.device) * (self.bounds[:, 0] - self.bounds[:, 1]) + self.bounds[:, 1]
+                if freeze is None:
+                    bee.position = torch.rand(len(self.bounds), device=self.device) * (self.bounds[:, 0] - self.bounds[:, 1]) + self.bounds[:, 1]
+                elif freeze == 'mol':
+                    new_part = torch.rand(len(self.bounds) - 32, device=self.device) * (self.bounds[32:, 0] - self.bounds[32:, 1]) + self.bounds[32:, 1]
+                    bee.position = torch.cat([bee.position[:32].clone(), new_part])
+                elif freeze == 'proc':
+                    new_part = torch.rand(32, device=self.device) * (self.bounds[:32, 0] - self.bounds[:32, 1]) + self.bounds[:32, 1]
+                    bee.position = torch.cat([new_part, bee.position[32:].clone()])
                 # print(bee.position)
                 bee.reset_trail()
-        #with TemporarilySetAttribute(self, 'scout_phase', True):
-             #self.ensure_bee_with_smiles()
-             #self.evaluate_fitness_and_trail()
+        if decode == 'yes':
+            with TemporarilySetAttribute(self, 'scout_phase', True):
+                self.ensure_bee_with_smiles()
+                self.evaluate_fitness_and_trail()
+        else:
+            with TemporarilySetAttribute(self, 'scout_phase', True):
+                self.evaluate_fitness_and_trail()
 
     def exchange_employee_onlooker(self):
         bee_swarm = self.employed_bees + self.onlooker_bees
@@ -86,7 +110,6 @@ class ArtificialBeeColony:
         self.employed_bees = bee_swarm[:half_length]
         self.onlooker_bees = bee_swarm[half_length:]
         
- 
 
     def ensure_bee_with_smiles(self):
         '''
@@ -98,23 +121,14 @@ class ArtificialBeeColony:
         we decode them and encode again until we get a valid molecule
         '''
         
-        if self.employees_phase:
+        if self.employees_phase or self.scout_phase:
             total_smiles_position = torch.stack([bee.candidate_position[:self.latent_size] for bee in self.employed_bees])
         if self.onlookers_phase:
             total_smiles_position = torch.stack([bee.candidate_position[:self.latent_size] for bee in self.onlooker_bees])
+        
         total_smiles = self.transform.get_smiles_from_position(total_smiles_position)
         counts = 0
-        
-        #firt time filter: put the SMILES that have error to none
-        """
-        for i in range(len(total_smiles)):
-            try:
-                #see if any kekulize or encoding error exists
-                self.JTVAE.encode_latent_mean([total_smiles[i]])
-            except:
-                total_smiles[i] = None
-        """
-        
+
         while (isinstance(total_smiles, list) and None in total_smiles) : #or any(re.search(r'\[.*-\]', s) or '+' in s for s in total_smiles):
             print('rebuild again')
             
@@ -133,19 +147,11 @@ class ArtificialBeeColony:
                 if smiles is not None:
                     total_smiles_position[idx] = smiles_position
                     total_smiles[idx] = smiles
-            
-            """
-            for j in range(len(total_smiles)):
-                try:
-                    #see if any kekulize or encoding error exists
-                    self.JTVAE.encode_latent_mean([total_smiles[j]])
-                except:
-                    total_smiles[j] = None
-            """
             counts += 1
             
         if self.employees_phase:
             # print('employees_phase# employees_phase')
+            # only change the SMILES part
             for bee, smile_position, smiles in zip(self.employed_bees, total_smiles_position, total_smiles):
                 bee.candidate_position[:self.latent_size] = smile_position
                 # print(bee.candidate_smiles, smiles)
@@ -158,11 +164,16 @@ class ArtificialBeeColony:
                 # print(bee.candidate_smiles, smiles)
                 bee.candidate_smiles = smiles
             # print('onlookers_phase& onlookers_phase')
+        if self.scout_phase:
+            for bee, smile_position, smiles in zip(self.employed_bees, total_smiles_position, total_smiles):
+                bee.candidate_position[:self.latent_size] = smile_position
+                # print(bee.candidate_smiles, smiles)
+                bee.candidate_smiles = smiles
 
     def evaluate_fitness_and_trail(self):
         if self.employees_phase:
             total_particle_position = self.transform.transform_beeswarm_to_feature(self.employed_bees)
-            if EI == True:
+            if self.EI == True:
                 total_fitness , total_expt_propertys = self.predictor.ensemble_predict_EI(total_particle_position, self.f_best)
             else:
                 total_fitness , total_expt_propertys = self.predictor.ensemble_predict(total_particle_position)
@@ -173,11 +184,6 @@ class ArtificialBeeColony:
                     bee.fitness = fitness
                     bee.expt_property = expt_porperty
                     bee.smiles = bee.candidate_smiles
-                    # print('$$$$$$$$$$$$$$$')
-                    # print('fitness is about',fitness)
-                    # print(bee.smiles)
-                    # print(expt_porperty)
-                    # print('@@@@@@@@@@@@@@@')
                     bee.reset_trail()
                 else:
                     bee.increase_trail()
@@ -190,7 +196,7 @@ class ArtificialBeeColony:
 
         if self.onlookers_phase:
             total_particle_position = self.transform.transform_beeswarm_to_feature(self.onlooker_bees)
-            if EI == True:
+            if self.EI == True:
                 total_fitness , total_expt_propertys = self.predictor.ensemble_predict_EI(total_particle_position, self.f_best)
             else:
                 total_fitness , total_expt_propertys = self.predictor.ensemble_predict(total_particle_position)
@@ -201,11 +207,6 @@ class ArtificialBeeColony:
                     bee.fitness = fitness
                     bee.expt_property = expt_porperty
                     bee.smiles = bee.candidate_smiles
-                    # print('***************')
-                    # print(fitness)
-                    # print(bee.smiles)
-                    # print(expt_porperty)
-                    # print('###############')
                     bee.reset_trail()
                 else:
                     bee.increase_trail()
@@ -214,33 +215,38 @@ class ArtificialBeeColony:
                 # print(f'{bee.smiles}\t{bee.fitness}\t{bee.expt_property.reation_yield[0]}')
             self.onlooker_bees = sorted(self.onlooker_bees, key=lambda bee: bee.fitness, reverse=True)        
 
-    def run(self):
+    def run(self, freeze=None, decode = 'yes'):
         for iteration in range(self.max_iterations):
-            self.employed_phase()
+            if iteration+1 == self.max_iterations:
+                decode = 'yes'
+            self.employed_phase(freeze, decode)
             print('Employed Phase Done')
-            self.onlooker_phase()
+            self.onlooker_phase(freeze, decode)
             print('Onlooker Phase Done')
-            self.scout_phase()
+            self.scout_phase(freeze, decode)
             print('Scout Phase Done')
             self.exchange_employee_onlooker()
             print('Exchange Done')
             
             print(f'Iteration {iteration + 1}')
-            print(f'Best Smiles: {self.employed_bees[0].smiles}')
+            if decode == 'yes':
+                print(f'Best Smiles: {self.employed_bees[0].smiles}')
+            else:
+                print(f'Best Smiles: choose not to decode')
             print(f'Fitness: {self.employed_bees[0].fitness:.4e}')
             print(f'Experiment Property:\n{self.employed_bees[0].expt_property}')
             
             print('new employed vs onlooker distribution')
-
-        
                 
-
-    def show_results(self):
+    def show_results(self, freeze = None, freeze_smiles = None):
         bee_swarm = self.employed_bees + self.onlooker_bees
         bee_swarm = sorted(bee_swarm, key=lambda bee: bee.fitness, reverse=True)
         for index, bee in enumerate(bee_swarm):
             print(f'\tRank {index + 1}')
-            print(f'Smiles: {bee.smiles}')
+            if freeze == 'mol':
+                print(f'Smiles: {freeze_smiles}')
+            else:
+                print(f'Smiles: {bee.smiles}')
             print(f'Fitness: {bee.fitness:.4e}')
             print(f'Experiment Property:')
             print(bee.expt_property)

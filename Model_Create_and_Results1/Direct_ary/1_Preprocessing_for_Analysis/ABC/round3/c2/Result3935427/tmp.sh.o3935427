@@ -1,0 +1,1866 @@
+==========================================================
+Starting on : Thu May  8 10:41:17 CST 2025
+Running on node : centos77-g1
+Current directory : /home/ianlee/opt_ian
+Current job ID : 3935427.centos77-h1
+==========================================================
+{'ls_vector': 0, 'Temp_C': 1, 'Concentration': 0, 'base_SMILES': 0, 'solvent_SMILES': 0}
+Center index: 20
+the mapped process feautures
+Index(['Temp_C', 'Concentration', 'base_SMILES', 'solvent_SMILES'], dtype='object')
+ ____  _             _      ____                _         ____            
+/ ___|| |_ __ _ _ __| |_   / ___|_ __ ___  __ _| |_ ___  | __ )  ___  ___ 
+\___ \| __/ _` | '__| __| | |   | '__/ _ \/ _` | __/ _ \ |  _ \ / _ \/ _ \
+ ___) | || (_| | |  | |_  | |___| | |  __/ (_| | ||  __/ | |_) |  __/  __/
+|____/ \__\__,_|_|   \__|  \____|_|  \___|\__,_|\__\___| |____/ \___|\___|
+                                                                          
+
+Finished position generating
+Start generating inital SMILES
+Bee 1: CC(C)c1ccccc1P(c1ccccc1)c1c(N(C)C)cccc1N(C)C
+Bee 2: CC(C)c1cc(O)c(C(C)C)c2c(N(Cc3ccccc3)c3ccccc3)cccc12
+Bee 3: CN(C)c1ccccc1-c1ccccc1P(c1ccccc1)C(C)(C)C
+Bee 4: Cc1ccc(P(c2ccccc2-c2ccccc2)C(N)c2cccc(C)c2N)c(C)c1
+Bee 5: COc1cccc(C(C)C)c1N(CCP(C)C)c1cccc2ccccc12
+Bee 6: CN(C)c1cccc2c(-c3cccc(C(O)c4ccccc4C(C)(C)C)c3)cccc12
+Bee 7: CN(C)c1ccccc1-c1ccccc1P(c1ccccc1)C(C)(C)O
+Bee 8: CC(=O)P(Cc1cccc2c(-c3c(N(C)C)cccc3N(C)C)cccc12)C(C)C
+Bee 9: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Bee 10: Cc1ccc(C)c(P(c2ccccc2-c2ccccc2)c2ccccc2N(C)C)c1
+  ___        _   _           _          _   _             
+ / _ \ _ __ | |_(_)_ __ ___ (_)______ _| |_(_) ___  _ __  
+| | | | '_ \| __| | '_ ` _ \| |_  / _` | __| |/ _ \| '_ \ 
+| |_| | |_) | |_| | | | | | | |/ / (_| | |_| | (_) | | | |
+ \___/| .__/ \__|_|_| |_| |_|_/___\__,_|\__|_|\___/|_| |_|
+      |_|                                                 
+
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 1
+Best Smiles: CN(C)c1ccccc1-c1ccccc1P(c1ccccc1)C(C)(C)O
+Fitness: 6.4946e+01
+Experiment Property:
+	Process Condition
+Temperature: 109.5735
+Concentration: 0.1072
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 64.9457, 0.1722
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 2
+Best Smiles: CC(C)c1c(O)cc(C(C)C)c2c(N(Cc3ccccc3)c3ccccc3)cccc12
+Fitness: 6.5456e+01
+Experiment Property:
+	Process Condition
+Temperature: 104.2620
+Concentration: 0.1254
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 65.4564, 0.2233
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 3
+Best Smiles: CC(C)c1c(O)cc(C(C)C)c2c(N(Cc3ccccc3)c3ccccc3)cccc12
+Fitness: 6.5511e+01
+Experiment Property:
+	Process Condition
+Temperature: 104.5730
+Concentration: 0.1276
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 65.5113, 0.1504
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 4
+Best Smiles: CC(C)c1c(O)cc(C(C)C)c2c(N(Cc3ccccc3)c3ccccc3)cccc12
+Fitness: 6.5511e+01
+Experiment Property:
+	Process Condition
+Temperature: 104.5730
+Concentration: 0.1276
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 65.5113, 0.1504
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 5
+Best Smiles: CC(C)c1cc(O)c(C(C)C)c2c(N(Cc3ccccc3)c3ccccc3)cccc12
+Fitness: 6.5768e+01
+Experiment Property:
+	Process Condition
+Temperature: 105.3705
+Concentration: 0.1315
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 65.7678, 0.2012
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 6
+Best Smiles: CC(C)c1cc(O)c(C(C)C)c2c(N(Cc3ccccc3)c3ccccc3)cccc12
+Fitness: 6.5768e+01
+Experiment Property:
+	Process Condition
+Temperature: 105.3705
+Concentration: 0.1315
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 65.7678, 0.2012
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 7
+Best Smiles: CC(C)c1cc(O)c(C(C)C)c2c(N(Cc3ccccc3)c3ccccc3)cccc12
+Fitness: 6.5768e+01
+Experiment Property:
+	Process Condition
+Temperature: 105.3705
+Concentration: 0.1315
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 65.7678, 0.2012
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 8
+Best Smiles: CC(C)c1cc(O)c(C(C)C)c2c(N(Cc3ccccc3)c3ccccc3)cccc12
+Fitness: 6.5768e+01
+Experiment Property:
+	Process Condition
+Temperature: 105.3705
+Concentration: 0.1315
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 65.7678, 0.2012
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 9
+Best Smiles: CC(C)c1cc(O)c(C(C)C)c2c(N(Cc3ccccc3)c3ccccc3)cccc12
+Fitness: 6.5768e+01
+Experiment Property:
+	Process Condition
+Temperature: 105.3705
+Concentration: 0.1315
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 65.7678, 0.2012
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 10
+Best Smiles: CC(C)c1cc(O)c(C(C)C)c2c(N(Cc3ccccc3)c3ccccc3)cccc12
+Fitness: 6.5768e+01
+Experiment Property:
+	Process Condition
+Temperature: 105.3705
+Concentration: 0.1315
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 65.7678, 0.2012
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 11
+Best Smiles: COc1c(C(C)C)ccc(C(C)C)c1N(Cc1ccccc1)c1cccc2ccccc12
+Fitness: 6.6109e+01
+Experiment Property:
+	Process Condition
+Temperature: 106.7562
+Concentration: 0.1278
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 66.1087, 0.1825
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 12
+Best Smiles: COc1c(C(C)C)ccc(C(C)C)c1N(Cc1ccccc1)c1cccc2ccccc12
+Fitness: 6.6109e+01
+Experiment Property:
+	Process Condition
+Temperature: 106.7562
+Concentration: 0.1278
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 66.1087, 0.1825
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 13
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 6.8801e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.8955
+Concentration: 0.0917
+Base: O=C([O-])C.[Cs+]
+Solvent: CCCCOC(C)=O
+	Prediction Result
+Reation Yield: 68.8009, 0.4877
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 14
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 6.8801e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.8955
+Concentration: 0.0917
+Base: O=C([O-])C.[Cs+]
+Solvent: CCCCOC(C)=O
+	Prediction Result
+Reation Yield: 68.8009, 0.4877
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 15
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)c1ccccc1N(C)C
+Fitness: 6.8999e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.2832
+Concentration: 0.0908
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 68.9991, 0.6561
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 16
+Best Smiles: Cc1ccccc1P(c1ccccc1C(C)C)c1ccccc1N(C)C
+Fitness: 6.9398e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.3799
+Concentration: 0.0901
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 69.3983, 0.6208
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 17
+Best Smiles: Cc1ccccc1P(c1ccccc1C(C)C)c1ccccc1N(C)C
+Fitness: 6.9401e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0105
+Concentration: 0.0887
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 69.4015, 0.6223
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 18
+Best Smiles: CC(C)c1cnn(P(c2ccccc2)c2cccc3c(N(C)C)cccc23)c1
+Fitness: 6.9533e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.4902
+Concentration: 0.0787
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 69.5333, 0.6475
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 19
+Best Smiles: CC(c1cccc2c(N(C)C)cccc12)P(c1ccccc1)N(C)c1ccccc1
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4754
+Concentration: 0.0817
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2979, 0.6510
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 20
+Best Smiles: CC(c1cccc2c(N(C)C)cccc12)P(c1ccccc1)N(C)c1ccccc1
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4754
+Concentration: 0.0817
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2979, 0.6510
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 21
+Best Smiles: CC(c1cccc2c(N(C)C)cccc12)P(c1ccccc1)N(C)c1ccccc1
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4754
+Concentration: 0.0817
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2979, 0.6510
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 22
+Best Smiles: CC(c1cccc2c(N(C)C)cccc12)P(c1ccccc1)N(C)c1ccccc1
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4754
+Concentration: 0.0817
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2979, 0.6510
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 23
+Best Smiles: CC(c1cccc2c(N(C)C)cccc12)P(c1ccccc1)N(C)c1ccccc1
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4754
+Concentration: 0.0817
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2979, 0.6510
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 24
+Best Smiles: CC(c1cccc2c(N(C)C)cccc12)P(c1ccccc1)N(C)c1ccccc1
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4754
+Concentration: 0.0817
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2979, 0.6510
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 25
+Best Smiles: CC(c1cccc2c(N(C)C)cccc12)P(c1ccccc1)N(C)c1ccccc1
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4754
+Concentration: 0.0817
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2979, 0.6510
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 26
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 27
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 28
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 29
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 30
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 31
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 32
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 33
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 34
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 35
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 36
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 37
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 38
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 39
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 40
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 41
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 42
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 43
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 44
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 45
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 46
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 47
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 48
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 49
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 50
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 51
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 52
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 53
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 54
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 55
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 56
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 57
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 58
+Best Smiles: CC(C)c1ccccc1P(c1ccccc1N(C)C)C(C)C
+Fitness: 7.0298e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.4737
+Concentration: 0.0926
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.2983, 0.6513
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 59
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0934e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.3056
+Concentration: 0.0810
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9339, 0.6945
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 60
+Best Smiles: CC(C)P(c1ccccc1P(Cc1ccccc1N(C)C)c1ccccc1)C(C)C
+Fitness: 7.0949e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.6964
+Concentration: 0.0819
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9487, 0.6524
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 61
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 62
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 63
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 64
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 65
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 66
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 67
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 68
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 69
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 70
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 71
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 72
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 73
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 74
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 75
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 76
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 77
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 78
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 79
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 80
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 81
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 82
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 83
+Best Smiles: CCN(c1ccccc1N)c1ccccc1C(C)(C)P(CC)c1ccccc1OC
+Fitness: 7.0955e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.0466
+Concentration: 0.0867
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9552, 0.6574
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 84
+Best Smiles: CC(c1ccccc1Oc1cccc2c(N(C)C)cccc12)N(C)C(C)(C)c1ccccc1CO
+Fitness: 7.0974e+01
+Experiment Property:
+	Process Condition
+Temperature: 93.8647
+Concentration: 0.1093
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 70.9737, 0.7271
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 85
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 86
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 87
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 88
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 89
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 90
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 91
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 92
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 93
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 94
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 95
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 96
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 97
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 98
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 99
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+Employed Phase Done
+Onlooker Phase Done
+Scout Phase Done
+Exchange Done
+Iteration 100
+Best Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+new employed vs onlooker distribution
+ ____              ____             _    
+| __ )  ___  ___  |  _ \ __ _ _ __ | | __
+|  _ \ / _ \/ _ \ | |_) / _` | '_ \| |/ /
+| |_) |  __/  __/ |  _ < (_| | | | |   < 
+|____/ \___|\___| |_| \_\__,_|_| |_|_|\_\
+                                         
+
+	Rank 1
+Smiles: CCN(c1ccccc1N)c1ccccc1-c1cc(P(C)c2ccccc2)ccc1C(C)C
+Fitness: 7.1084e+01
+Experiment Property:
+	Process Condition
+Temperature: 99.6627
+Concentration: 0.0880
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0845, 0.5560
+-------------------------
+	Rank 2
+Smiles: CN(C)c1cc(CCCP(c2ccccc2)c2ccccc2)c(N(C)Cc2ccccc2N(C)C)cc1N
+Fitness: 7.1077e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.4420
+Concentration: 0.1387
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0773, 1.5616
+-------------------------
+	Rank 3
+Smiles: CC(C)N(C)C(C)c1ccccc1Oc1cccc2c(N(C)Cc3ccccc3)cccc12
+Fitness: 7.1016e+01
+Experiment Property:
+	Process Condition
+Temperature: 91.9306
+Concentration: 0.1082
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 71.0156, 0.6794
+-------------------------
+	Rank 4
+Smiles: Cc1cnn(C(C)c2ccccc2C(C)P(c2ccccc2)c2cnn(C(C)O)c2)c1
+Fitness: 7.0403e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.9779
+Concentration: 0.0923
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 70.4030, 0.3370
+-------------------------
+	Rank 5
+Smiles: CC(C)(C)C
+Fitness: 6.8080e+01
+Experiment Property:
+	Process Condition
+Temperature: 90.0312
+Concentration: 0.1328
+Base: O=C([O-])C(C)(C)C.[Cs+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 68.0798, 2.9012
+-------------------------
+	Rank 6
+Smiles: CN(C)c1ccccc1-c1ccccc1P(c1ccccc1)C(C)(C)O
+Fitness: 6.5669e+01
+Experiment Property:
+	Process Condition
+Temperature: 106.9524
+Concentration: 0.1054
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 65.6692, 0.2912
+-------------------------
+	Rank 7
+Smiles: CN(C)c1ccccc1C1=NN(C(C)(C)O)C(c2ccccc2)C1c1ccccc1N(C)C
+Fitness: 6.5125e+01
+Experiment Property:
+	Process Condition
+Temperature: 105.2626
+Concentration: 0.0925
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 65.1254, 0.3431
+-------------------------
+	Rank 8
+Smiles: Cc1ccc(CO)c(-c2ccccc2N(C)C(C)c2ccccc2N=Cc2ccccc2C)c1
+Fitness: 6.3049e+01
+Experiment Property:
+	Process Condition
+Temperature: 91.5970
+Concentration: 0.1072
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 63.0492, 0.4085
+-------------------------
+	Rank 9
+Smiles: CN(C)c1ccccc1-c1ccccc1P(c1ccccc1)C(C)(C)C
+Fitness: 6.2753e+01
+Experiment Property:
+	Process Condition
+Temperature: 98.6083
+Concentration: 0.1108
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 62.7528, 0.9015
+-------------------------
+	Rank 10
+Smiles: CC(C)c1ccccc1P(c1ccccc1)c1ccccc1N(C)C
+Fitness: 6.0569e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.1136
+Concentration: 0.1001
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 60.5689, 0.3505
+-------------------------
+==========================================================
+Enging on : Thu May  8 11:46:10 CST 2025
+==========================================================

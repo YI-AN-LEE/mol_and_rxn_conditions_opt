@@ -7,7 +7,7 @@ import numpy as np
 #from hgraph import HierVAE, PairVocab
 from Algorithms.Fittness import Fitness
 from Algorithms.PSO.Arg import PSOArgs
-from Algorithms.PSO.Create import create_pool_v2, sort_filter_and_reappend
+from Algorithms.PSO.Create import create_pool_v2, sort_filter_and_reappend, create_pool_freeze
 from Algorithms.PSO.ParticleSwarmOptimization import ParticleSwarmOptimization
 from Environments.PvkAdditives.lib.Pvk_Predictor import Pvk_Ensemble_Predictor, PvkTransform
 from Environments.PvkAdditives.lib.Bounds import pvk_bounds_v2
@@ -41,6 +41,8 @@ if __name__ == '__main__':
     # Input data
     init_expt_data = pd.read_csv(args.ini_csv_path) #original data file
     proc_list = ['Reagent1 (ul)','Reagent2 (ul)','Reagent3 (ul)','Reagent4 (ul)', 'lab_code']
+    #name of the columns   這兩行解決 + bound 就可以跑看看
+
     # Randomly select a row based on the seed
     num_rows = init_expt_data.shape[0]
     random_index = torch.randint(0, num_rows, (1,)).item()
@@ -68,25 +70,35 @@ if __name__ == '__main__':
     center_position = torch.cat((latent_vecs[0], torch.tensor((proc), dtype=torch.float32).to('cuda')), dim = 0)
 
     print(pyfiglet.figlet_format('Start Create Pool'))
-    pool = create_pool_v2(center_position, args.pop_size, bounds, args.radius, transform, predictor)
-    # initial_position, index, pop_size, bounds, radius, transform:PvkTransform, predictor:Pvk_Ensemble_Predictor
-    # pool = create_pool(center_particle, bounds, args.freeze, args.radius, args.pop_size, transform)
-
-    # pool = generate_initial_particle_pool(init_x_tensor, init_expt_data, bounds, args.pop_size)
+    # initial pool sampled from the center position with radius = 2.5
+    if args.freeze is None:
+        pool = create_pool_v2(center_position, args.pop_size, bounds, args.radius, transform, predictor)
+    else:
+        pool = create_pool_freeze(center_position, args.pop_size, bounds, args.radius, transform, predictor, proc_list, args.freeze)
     
     for idx, particle in enumerate(pool):
         print(f'Particle {idx + 1}: {particle.smiles}')
     
     print(pyfiglet.figlet_format('Optimization'))
     for generation in range(args.generation):
-        pso = ParticleSwarmOptimization(pool, args.pso_epoch, transform, predictor, generation, radius=args.radius, sto = True) 
-        pso.optimize()
+        # Here we can just delete the duplicate particles especially for pop_size > 3.
+        # Create new pool and add it into the old one.
+
+        # open this to restart population (random sampling involved)
+        # pool = sort_filter_and_reappend(pool, bounds, args.radius, args.pop_size, transform)
+        
+        pso = ParticleSwarmOptimization(pool, args.pso_epoch, transform, predictor, generation, sto = False)
+        pso.optimize_freeze(args.freeze,args.decode)
+        print(pool)
     pool = sorted(pool, key=lambda particle: particle.best_fitness, reverse=True)
 
     print(pyfiglet.figlet_format('Particles Rank'))
     for index, particle in enumerate(pool):
         print(f'\tRank {index + 1}')
-        print(f'Smiles: {particle.best_smiles}')
+        if args.freeze =='mol':
+            print(f'Smiles: {smi_data}')
+        else:
+            print(f'Smiles: {particle.smiles}')
         print(f'Fitness: {particle.best_fitness:.4e}')
-        print(f'Molecule Property:')
+        print(f'Experiment Property:')
         print(particle.best_expt_property)

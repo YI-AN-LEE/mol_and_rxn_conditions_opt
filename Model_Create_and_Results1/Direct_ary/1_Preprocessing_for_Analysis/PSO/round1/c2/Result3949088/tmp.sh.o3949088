@@ -1,0 +1,1370 @@
+==========================================================
+Starting on : Tue Jul 22 14:08:06 CST 2025
+Running on node : centos77-g1
+Current directory : /home/ianlee/opt_ian
+Current job ID : 3949088.centos77-h1
+==========================================================
+Center index: 25
+Origiinal Data                                         ligand_SMILES  ...    yield
+25  NNc1ccc([O-])c2c(P(Cc3ccc(CSc4ccccc4)cc3)c3ccc...  ...  11.1635
+
+[1 rows x 6 columns]
+the mapped process feautures
+Index(['Temp_C', 'Concentration', 'base_SMILES', 'solvent_SMILES'], dtype='object')
+25    NNc1ccc([O-])c2c(P(Cc3ccc(CSc4ccccc4)cc3)c3ccc...
+Name: ligand_SMILES, dtype: object
+ ____  _             _      ____                _         ____             _ 
+/ ___|| |_ __ _ _ __| |_   / ___|_ __ ___  __ _| |_ ___  |  _ \ ___   ___ | |
+\___ \| __/ _` | '__| __| | |   | '__/ _ \/ _` | __/ _ \ | |_) / _ \ / _ \| |
+ ___) | || (_| | |  | |_  | |___| | |  __/ (_| | ||  __/ |  __/ (_) | (_) | |
+|____/ \__\__,_|_|   \__|  \____|_|  \___|\__,_|\__\___| |_|   \___/ \___/|_|
+                                                                             
+
+Particle 1: NNc1cccc(P(=O)(c2ccc(C(=O)[O-])cc2)c2ccccc2CSCc2ccccc2)c1
+Particle 2: NNc1cccc2c(OCc3ccccc3C#Cc3ccccc3)cccc12
+Particle 3: Nn1c(OCCc2ccc(-c3ccccc3)cc2)nc2cc(NN=C([O-])c3ccccc3)ccc21
+Particle 4: COc1ccc(-c2ccc(-c3nnn(N=Cc4cccc(NN)c4[O-])n3)cc2)cc1
+Particle 5: NNc1ccccc1P(=O)(c1ccccc1)c1ccc(Cc2ccccc2)cc1
+Particle 6: O=P(c1ccccc1)(c1ccccc1NN=Cc1ccccc1[S-])c1ccccc1-c1ccccc1CSc1ccccc1
+Particle 7: Oc1ccc(-c2ccc(Cc3ccc(N4N=CCSC4=NN=Cc4ccccc4)cc3)cc2)cc1
+Particle 8: NNc1ccc(P(=O)(c2ccc(CSCc3ccccc3)cc2)c2cccc3ccccc23)cc1
+Particle 9: NNc1cc(F)cc(C=Nn2nnc(-c3ccc(-c4cccc5ccccc45)cc3)n2)c1[O-]
+Particle 10: NNc1ccc(C=NN2C(=S)[NH+]=NC2c2ccc(Oc3ccccc3)cc2)cc1[N+](=O)[O-]
+  ___        _   _           _          _   _             
+ / _ \ _ __ | |_(_)_ __ ___ (_)______ _| |_(_) ___  _ __  
+| | | | '_ \| __| | '_ ` _ \| |_  / _` | __| |/ _ \| '_ \ 
+| |_| | |_) | |_| | | | | | | |/ / (_| | |_| | (_) | | | |
+ \___/| .__/ \__|_|_| |_| |_|_/___\__,_|\__|_|\___/|_| |_|
+      |_|                                                 
+
+	Iteration 1
+Best  Smiles: NNc1cccc2c(OCc3ccccc3C#Cc3ccccc3)cccc12
+Fitness: 1.2438e+01
+Experiment Property:
+	Process Condition
+Temperature: 114.7430
+Concentration: 0.1223
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 12.4384, 2.6646
+-------------------------
+	Iteration 2
+Best  Smiles: NNc1ccc(P(=O)(c2ccc(O)cc2)c2ccc(CSCc3ccccc3)cc2)cc1
+Fitness: 1.3781e+01
+Experiment Property:
+	Process Condition
+Temperature: 115.7322
+Concentration: 0.0617
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 13.7807, 2.3880
+-------------------------
+	Iteration 3
+Best  Smiles: NNc1ccc(P(=O)(c2ccccc2C=NNCc2ccccc2)c2ccccc2-c2ccccc2)cc1
+Fitness: 1.7320e+01
+Experiment Property:
+	Process Condition
+Temperature: 114.0122
+Concentration: 0.1320
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 17.3200, 0.4513
+-------------------------
+	Iteration 4
+Best  Smiles: NNc1ccc(P(=O)(c2ccccc2C=NNCc2ccccc2)c2ccccc2-c2ccccc2)cc1
+Fitness: 1.7320e+01
+Experiment Property:
+	Process Condition
+Temperature: 114.0122
+Concentration: 0.1320
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 17.3200, 0.4513
+-------------------------
+	Iteration 5
+Best  Smiles: NNc1ccc(P(=O)(c2ccc(-c3ccccc3)cc2)c2ccccc2C=NNCc2ccccc2)cc1
+Fitness: 1.9145e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.1055
+Concentration: 0.1008
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.1451, 1.9766
+-------------------------
+	Iteration 6
+Best  Smiles: NNc1ccc(P(=O)(c2ccc(-c3ccccc3)cc2)c2ccccc2C=NNCc2ccccc2)cc1
+Fitness: 1.9145e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.1055
+Concentration: 0.1008
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.1451, 1.9766
+-------------------------
+	Iteration 7
+Best  Smiles: NNc1ccc(P(=O)(c2ccc(-c3ccccc3)cc2)c2ccccc2C=NNCc2ccccc2)cc1
+Fitness: 1.9145e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.1055
+Concentration: 0.1008
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.1451, 1.9766
+-------------------------
+	Iteration 8
+Best  Smiles: NNc1ccc(P(=O)(c2ccc(-c3ccccc3)cc2)c2ccccc2C=NNCc2ccccc2)cc1
+Fitness: 1.9145e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.1055
+Concentration: 0.1008
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.1451, 1.9766
+-------------------------
+	Iteration 9
+Best  Smiles: NNc1ccc(P(=O)(c2ccc(-c3ccccc3)cc2)c2ccccc2C=NNCc2ccccc2)cc1
+Fitness: 1.9145e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.1055
+Concentration: 0.1008
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.1451, 1.9766
+-------------------------
+	Iteration 10
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 11
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 12
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 13
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 14
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 15
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 16
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 17
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 18
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 19
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 20
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 21
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 22
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 23
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 24
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 25
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 26
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 27
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 28
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9594e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9788
+Concentration: 0.0863
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.5942, 1.8778
+-------------------------
+	Iteration 29
+Best  Smiles: NNc1ccc(P(CCc2ccccc2)c2ccccc2C=Nc2ccc([S-])cc2)cc1
+Fitness: 1.9606e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9614
+Concentration: 0.0642
+Base: O=C([O-])C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 19.6060, 1.9690
+-------------------------
+	Iteration 30
+Best  Smiles: NNc1cccc2c(C#Cc3ccc(OCc4ccccc4)cc3)ccc(-c3ccccc3)c12
+Fitness: 2.0629e+01
+Experiment Property:
+	Process Condition
+Temperature: 114.9399
+Concentration: 0.0829
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 20.6287, 1.0897
+-------------------------
+	Iteration 31
+Best  Smiles: NNc1cccc2c(C#Cc3ccc(OCc4ccccc4)cc3)ccc(-c3ccccc3)c12
+Fitness: 2.0629e+01
+Experiment Property:
+	Process Condition
+Temperature: 114.9399
+Concentration: 0.0829
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 20.6287, 1.0897
+-------------------------
+	Iteration 32
+Best  Smiles: NNc1cccc2c(C#Cc3ccc(OCc4ccccc4)cc3)ccc(-c3ccccc3)c12
+Fitness: 2.0629e+01
+Experiment Property:
+	Process Condition
+Temperature: 114.9399
+Concentration: 0.0829
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 20.6287, 1.0897
+-------------------------
+	Iteration 33
+Best  Smiles: N#Cc1ccccc1CCOc1cccc2c(NN)cccc12
+Fitness: 2.0737e+01
+Experiment Property:
+	Process Condition
+Temperature: 115.8830
+Concentration: 0.0854
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 20.7367, 1.5856
+-------------------------
+	Iteration 34
+Best  Smiles: N#Cc1ccccc1CCOc1cccc2c(NN)cccc12
+Fitness: 2.0737e+01
+Experiment Property:
+	Process Condition
+Temperature: 115.8830
+Concentration: 0.0854
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 20.7367, 1.5856
+-------------------------
+	Iteration 35
+Best  Smiles: O=[N+]([O-])C1OC(c2ccccc2OCc2ccccc2)=NC1=Cc1ccc(NN=C(c2ccccc2)c2ccccc2)cc1
+Fitness: 2.9119e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.9939
+Concentration: 0.0577
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 29.1190, 0.4890
+-------------------------
+	Iteration 36
+Best  Smiles: O=[N+]([O-])c1cccc(C=C2N=C(c3ccccc3OCc3ccccc3)OC2[N+](=O)[O-])c1NN=Cc1ccccc1
+Fitness: 3.2818e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.8306
+Concentration: 0.0655
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 32.8178, 1.2228
+-------------------------
+	Iteration 37
+Best  Smiles: O=[N+]([O-])c1cccc(C=C2N=C(c3ccccc3OCc3ccccc3)OC2[N+](=O)[O-])c1NN=Cc1ccccc1
+Fitness: 3.2818e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.8306
+Concentration: 0.0655
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 32.8178, 1.2228
+-------------------------
+	Iteration 38
+Best  Smiles: O=[N+]([O-])c1cccc(C=C2N=C(c3ccccc3OCc3ccccc3)OC2[N+](=O)[O-])c1NN=Cc1ccccc1
+Fitness: 3.2818e+01
+Experiment Property:
+	Process Condition
+Temperature: 113.8306
+Concentration: 0.0655
+Base: O=C([O-])C.[K+]
+Solvent: CC(N(C)C)=O
+	Prediction Result
+Reation Yield: 32.8178, 1.2228
+-------------------------
+	Iteration 39
+Best  Smiles: NNc1ccc(C=C2CN(c3ccc(-c4ccccc4)cc3)N=C2CSc2ccccc2)cc1[N+](=O)[O-]
+Fitness: 3.3322e+01
+Experiment Property:
+	Process Condition
+Temperature: 109.2295
+Concentration: 0.1205
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 33.3217, 1.1289
+-------------------------
+	Iteration 40
+Best  Smiles: NNC(=O)n1c(C=Cc2ccc(OCc3ccccc3)cc2)nc2ccccc21
+Fitness: 3.5364e+01
+Experiment Property:
+	Process Condition
+Temperature: 108.2890
+Concentration: 0.1213
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 35.3640, 1.1192
+-------------------------
+	Iteration 41
+Best  Smiles: NNC(=O)n1c(C=Cc2ccc(OCc3ccccc3)cc2)nc2ccccc21
+Fitness: 3.5364e+01
+Experiment Property:
+	Process Condition
+Temperature: 108.2890
+Concentration: 0.1213
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 35.3640, 1.1192
+-------------------------
+	Iteration 42
+Best  Smiles: NNC(=O)c1ccc(-n2cc(C=Cc3ccc4ccccc4c3)c3ccccc32)cc1
+Fitness: 3.5420e+01
+Experiment Property:
+	Process Condition
+Temperature: 108.0215
+Concentration: 0.1328
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 35.4205, 1.0254
+-------------------------
+	Iteration 43
+Best  Smiles: NNC(=O)N(Cc1ccc(Cl)cc1)Cc1cccc(C=Cc2ccccc2)c1
+Fitness: 3.5610e+01
+Experiment Property:
+	Process Condition
+Temperature: 107.8929
+Concentration: 0.0823
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 35.6104, 1.1398
+-------------------------
+	Iteration 44
+Best  Smiles: NNC(=O)N(Cc1cccc(C=Cc2ccccc2)c1)c1ccc(Cl)cc1
+Fitness: 3.7069e+01
+Experiment Property:
+	Process Condition
+Temperature: 106.1675
+Concentration: 0.0899
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 37.0686, 1.0435
+-------------------------
+	Iteration 45
+Best  Smiles: NNC(=O)N(Cc1cccc(C=Cc2ccccc2)c1)c1ccc(Cl)cc1
+Fitness: 3.7069e+01
+Experiment Property:
+	Process Condition
+Temperature: 106.1675
+Concentration: 0.0899
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 37.0686, 1.0435
+-------------------------
+	Iteration 46
+Best  Smiles: Nc1nn(NC(=O)C=Cc2ccc(-c3ccccc3O)cc2)c(=O)c2ccccc12
+Fitness: 4.4741e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.9548
+Concentration: 0.1369
+Base: O=C([O-])C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 44.7405, 2.3672
+-------------------------
+	Iteration 47
+Best  Smiles: Nc1nn(NC(=O)C=Cc2cccc(COc3ccccc3)c2)c(=O)c2ccccc12
+Fitness: 4.5112e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.8960
+Concentration: 0.0791
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 45.1118, 2.0121
+-------------------------
+	Iteration 48
+Best  Smiles: Nc1nn(NC(=O)C=Cc2cccc(COc3ccccc3)c2)c(=O)c2ccccc12
+Fitness: 4.5112e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.8960
+Concentration: 0.0791
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 45.1118, 2.0121
+-------------------------
+	Iteration 49
+Best  Smiles: Cn1nccc(N2CC(c3ccc(NCC=Cc4ccccc4)cc3)C(c3ccc4c(c3)OCO4)=N2)c1=O
+Fitness: 4.7454e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8700
+Concentration: 0.1002
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 47.4539, 1.3464
+-------------------------
+	Iteration 50
+Best  Smiles: Nc1ccc(=O)n(NC(=O)C=Cc2cccc(COc3ccccc3)c2)n1
+Fitness: 4.7524e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8796
+Concentration: 0.0915
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 47.5245, 1.6157
+-------------------------
+	Iteration 51
+Best  Smiles: Nc1ccc(=O)n(NC(=O)C=Cc2cccc(COc3ccccc3)c2)n1
+Fitness: 4.7524e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8796
+Concentration: 0.0915
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 47.5245, 1.6157
+-------------------------
+	Iteration 52
+Best  Smiles: Nc1ccc(=O)n(NC(=O)C=Cc2cccc(COc3ccccc3)c2)n1
+Fitness: 4.7524e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8796
+Concentration: 0.0915
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 47.5245, 1.6157
+-------------------------
+	Iteration 53
+Best  Smiles: Nc1ccc(=O)n(NC(=O)C=Cc2cccc(COc3ccccc3)c2)n1
+Fitness: 4.7524e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8796
+Concentration: 0.0915
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 47.5245, 1.6157
+-------------------------
+	Iteration 54
+Best  Smiles: Nc1ccc(=O)n(NC(=O)C=Cc2cccc(COc3ccccc3)c2)n1
+Fitness: 4.7524e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8796
+Concentration: 0.0915
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 47.5245, 1.6157
+-------------------------
+	Iteration 55
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccccc3)c3cccc(OCc4ccccc4)c3)CC2)c1=O
+Fitness: 4.8008e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.5191
+Concentration: 0.0772
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.0083, 1.6204
+-------------------------
+	Iteration 56
+Best  Smiles: Nc1ccc(=O)n(NC(=O)C=Cc2cccc(COc3ccccc3)c2)n1
+Fitness: 4.8109e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.3587
+Concentration: 0.0793
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.1088, 1.5734
+-------------------------
+	Iteration 57
+Best  Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Iteration 58
+Best  Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Iteration 59
+Best  Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Iteration 60
+Best  Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Iteration 61
+Best  Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Iteration 62
+Best  Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Iteration 63
+Best  Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Iteration 64
+Best  Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Iteration 65
+Best  Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Iteration 66
+Best  Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Iteration 67
+Best  Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Iteration 68
+Best  Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Iteration 69
+Best  Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Iteration 70
+Best  Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Iteration 71
+Best  Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Iteration 72
+Best  Smiles: Nc1ccc(=O)n(NC(=O)C=Cc2ccc(-c3ccccc3[N+](=O)[O-])cc2)n1
+Fitness: 4.8590e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.0746
+Concentration: 0.0996
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 48.5896, 1.0336
+-------------------------
+	Iteration 73
+Best  Smiles: Nc1ccc(=O)n(NC(=O)C=Cc2ccc(-c3ccccc3[N+](=O)[O-])cc2)n1
+Fitness: 4.8590e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.0746
+Concentration: 0.0996
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 48.5896, 1.0336
+-------------------------
+	Iteration 74
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 75
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 76
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 77
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 78
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 79
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 80
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 81
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 82
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 83
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 84
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 85
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 86
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 87
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 88
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 89
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 90
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 91
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 92
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 93
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 94
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 95
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 96
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 97
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 98
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 99
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Iteration 100
+Best  Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+[<Algorithms.PSO.Particle.Particle object at 0x7f2c52f0f400>, <Algorithms.PSO.Particle.Particle object at 0x7f2c52f0fe20>, <Algorithms.PSO.Particle.Particle object at 0x7f2c52f0f100>, <Algorithms.PSO.Particle.Particle object at 0x7f2c52f0fc40>, <Algorithms.PSO.Particle.Particle object at 0x7f2c52f0f160>, <Algorithms.PSO.Particle.Particle object at 0x7f2c52f0f370>, <Algorithms.PSO.Particle.Particle object at 0x7f2c52f0f1c0>, <Algorithms.PSO.Particle.Particle object at 0x7f2c53161520>, <Algorithms.PSO.Particle.Particle object at 0x7f2c52f0f5e0>, <Algorithms.PSO.Particle.Particle object at 0x7f2c52f0ffd0>]
+ ____            _   _      _             ____             _    
+|  _ \ __ _ _ __| |_(_) ___| | ___  ___  |  _ \ __ _ _ __ | | __
+| |_) / _` | '__| __| |/ __| |/ _ \/ __| | |_) / _` | '_ \| |/ /
+|  __/ (_| | |  | |_| | (__| |  __/\__ \ |  _ < (_| | | | |   < 
+|_|   \__,_|_|   \__|_|\___|_|\___||___/ |_| \_\__,_|_| |_|_|\_\
+                                                                
+
+	Rank 1
+Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccc4ccccc4c3)c3ccccc3O)CC2)c1=O
+Fitness: 4.8660e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.1561
+Concentration: 0.0805
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.6595, 1.0642
+-------------------------
+	Rank 2
+Smiles: Nc1ccc(=O)n(NC(=O)C=Cc2ccc(-c3ccccc3[N+](=O)[O-])cc2)n1
+Fitness: 4.8590e+01
+Experiment Property:
+	Process Condition
+Temperature: 102.0746
+Concentration: 0.0996
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 48.5896, 1.0336
+-------------------------
+	Rank 3
+Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccccc3)c3cccc(OCc4ccccc4)c3)CC2)c1=O
+Fitness: 4.8574e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.0843
+Concentration: 0.0896
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.5739, 1.1066
+-------------------------
+	Rank 4
+Smiles: Cn1nccc(N2N=C(c3ccccc3O)CC2C=Cc2ccc(NC(=O)c3ccco3)cc2)c1=O
+Fitness: 4.8543e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.2988
+Concentration: 0.0765
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 48.5430, 1.0774
+-------------------------
+	Rank 5
+Smiles: C1=CCN(c2ccccc2)N=C1
+Fitness: 4.8235e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.8104
+Concentration: 0.0803
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2352, 1.4767
+-------------------------
+	Rank 6
+Smiles: NC1CN(C(=O)N2N=CC=CC2[NH3+])N=C1CCc1ccccc1O
+Fitness: 4.8232e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.2053
+Concentration: 0.0993
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CC1=CC=C(C)C=C1
+	Prediction Result
+Reation Yield: 48.2323, 1.4781
+-------------------------
+	Rank 7
+Smiles: Nc1ccc(=O)n(NC(=O)Cc2ccc(COc3ccccc3)cc2)n1
+Fitness: 4.7957e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.4081
+Concentration: 0.0817
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 47.9574, 1.6992
+-------------------------
+	Rank 8
+Smiles: O=c1ccc(N2CC(C=Cc3ccc(-n4cnnc4)cc3)C(c3ccccc3O)=N2)nn1CCN1CCCC1
+Fitness: 4.7842e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.0862
+Concentration: 0.0782
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 47.8419, 1.4648
+-------------------------
+	Rank 9
+Smiles: Cn1nccc(N2CCN(C(=[NH+]CCc3ccccc3)c3cccc(OCc4ccccc4)c3)CC2)c1=O
+Fitness: 4.7706e+01
+Experiment Property:
+	Process Condition
+Temperature: 100.0220
+Concentration: 0.0923
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 47.7059, 1.4074
+-------------------------
+	Rank 10
+Smiles: NC(=CC=Cc1ccc(N(Cc2ccccc2)Cc2ccccc2)cc1)n1ncc2ccccc2c1=O
+Fitness: 4.7517e+01
+Experiment Property:
+	Process Condition
+Temperature: 101.1741
+Concentration: 0.0960
+Base: O=C([O-])C(C)(C)C.[K+]
+Solvent: CCCC#N
+	Prediction Result
+Reation Yield: 47.5173, 1.6245
+-------------------------
+==========================================================
+Enging on : Tue Jul 22 15:31:50 CST 2025
+==========================================================

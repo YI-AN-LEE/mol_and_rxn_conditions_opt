@@ -64,3 +64,27 @@ class Bee:
                 self.candidate_position[i] += 2 * deficit # original method
                 if self.candidate_position[i] < self.bounds[i][1]:
                     self.candidate_position[i] = self.bounds[i][1]
+
+    def get_candidate_position_freeze(self, others_position: torch.Tensor, freeze_label):
+        if freeze_label == "mol":
+            perturb = torch.zeros_like(self.position)
+            perturb[32:] = torch.empty_like(self.position[32:]).uniform_(-1 * self.radius, self.radius) * (self.position[32:] - others_position[32:])
+            self.candidate_position = self.position + perturb
+        if freeze_label == "proc":
+            perturb = torch.zeros_like(self.position)
+            perturb[:32] = torch.empty_like(self.position[:32]).uniform_(-1 * self.radius, self.radius) * (self.position[:32] - others_position[:32])
+            self.candidate_position = self.position + perturb
+        
+        #elf.candidate_position = self.position + torch.empty_like(self.position).uniform_(0, self.radius) * (self.position - others_position)       
+        for i in range(-1* len(self.bounds), 0):
+            if self.candidate_position[i] > self.bounds[i][0]: # upper bound
+                excess = self.candidate_position[i] - self.bounds[i][0] # original method
+                self.candidate_position[i] -= 2 * excess # original method
+                if self.candidate_position[i] > self.bounds[i][0]:
+                    self.candidate_position[i] = self.bounds[i][0]
+
+            elif self.candidate_position[i] < self.bounds[i][1]: # lower bound
+                deficit = self.bounds[i][1] - self.candidate_position[i] # original method
+                self.candidate_position[i] += 2 * deficit # original method
+                if self.candidate_position[i] < self.bounds[i][1]:
+                    self.candidate_position[i] = self.bounds[i][1]

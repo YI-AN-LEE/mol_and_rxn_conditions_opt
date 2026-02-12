@@ -16,10 +16,10 @@ class ParticleSwarmOptimization:
             predictor: Pvk_Ensemble_Predictor,
             generation,
             radius = 0.25,
-            inertia_weight = 1,  
-            cognitive_weight = 2, 
-            social_weight = 2,  
-            mult = 0.125, 
+            inertia_weight = 1,  # we can try another 0.45 1 0.5 0.25
+            cognitive_weight = 2, #0.6 2.0 1.0 0.5 
+            social_weight = 2,  #0.6 2.0 1.0 0.5, 
+            mult = 0.125, #control 縮放倍率,
             EI = False,
             sto = False,
             f_best = None,
@@ -44,7 +44,7 @@ class ParticleSwarmOptimization:
         self.generation = generation
         self.mult = mult
 
-    def optimize(self):
+    def optimize(self, decode):
         # Run the Optmization Iteration
         for iteration in range(self.max_iterations):
             self.evaluate_fitness()
@@ -55,12 +55,79 @@ class ParticleSwarmOptimization:
                     particle.update_position_sto(self.mult)
                 else:
                     particle.update_position(self.mult)
+    
+            if decode == 'yes':
+                self.ensure_particles_with_smiles() # only decode here
+
+            print(f'\tIteration {self.generation * self.max_iterations + iteration + 1}')
+
+            if decode == 'yes':
+                print(f'Best  Smiles: {self.global_best_smiles}')
+            else:
+                print(f'Best  Smiles: choose not to decode')
+            print(f'Fitness: {self.global_best_fitness:.4e}')
+            print(f'Experiment Property:')
+            print(self.global_best_expt_property)
+    
+    def optimize_seq(self):
+        # Run the Optmization Iteration with sequential optimization
+        for iteration in range(self.max_iterations//2):
+            self.evaluate_fitness()
+            self.update_global_best()
+            for particle in tqdm(self.pool, desc='Pool Progress'):
+                particle.update_velocity_freeze(self.global_best_position, self.inertia_weight,self.cognitive_weight, self.social_weight, freeze = 'proc')
+                if self.sto is True:
+                    particle.update_position_sto(self.mult)
+                else:
+                    particle.update_position(self.mult)
             self.ensure_particles_with_smiles()
             print(f'\tIteration {self.generation * self.max_iterations + iteration + 1}')
             print(f'Best  Smiles: {self.global_best_smiles}')
             print(f'Fitness: {self.global_best_fitness:.4e}')
             print(f'Experiment Property:')
             print(self.global_best_expt_property)
+        
+        print('finished molecular design, start to optimize reaction conditions...')
+
+        for iteration in range(self.max_iterations//2, self.max_iterations):
+            self.evaluate_fitness()
+            self.update_global_best()
+            for particle in tqdm(self.pool, desc='Pool Progress'):
+                particle.update_velocity_freeze(self.global_best_position, self.inertia_weight,self.cognitive_weight, self.social_weight, freeze = 'mol')
+                if self.sto is True:
+                    particle.update_position_sto(self.mult)
+                else:
+                    particle.update_position(self.mult)
+            self.ensure_particles_with_smiles()
+            print(f'\tIteration {self.generation * self.max_iterations + iteration + 1}')
+            print(f'Best  Smiles: {self.global_best_smiles}')
+            print(f'Fitness: {self.global_best_fitness:.4e}')
+            print(f'Experiment Property:')
+            print(self.global_best_expt_property)
+
+    def optimize_freeze(self, freeze, decode):
+        # Run the Optmization Iteration with sequential optimization
+        for iteration in range(self.max_iterations):
+            if iteration+1==self.max_iterations:
+                decode = 'yes'
+            self.evaluate_fitness()
+            self.update_global_best()
+            for particle in tqdm(self.pool, desc='Pool Progress'):
+                particle.update_velocity_freeze(self.global_best_position, self.inertia_weight,self.cognitive_weight, self.social_weight, freeze)
+                particle.update_position(self.mult)
+
+            if decode == 'yes':
+                self.ensure_particles_with_smiles() # only decode here
+
+            print(f'\tIteration {self.generation * self.max_iterations + iteration + 1}')
+            if decode == 'yes':
+                print(f'Best  Smiles: {self.global_best_smiles}')
+            else:
+                print(f'Best  Smiles: choose not to decode')
+            print(f'Fitness: {self.global_best_fitness:.4e}')
+            print(f'Experiment Property:')
+            print(self.global_best_expt_property)
+    
 
     def evaluate_fitness(self):
         '''

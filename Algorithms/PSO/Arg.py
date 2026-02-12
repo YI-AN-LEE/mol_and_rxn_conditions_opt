@@ -1,14 +1,14 @@
 import argparse
 
 def str2bool(v):
+    # 将字符串转换为布尔值
     return v.lower() in ('true', '1', 'yes')
 
 def PSOArgs():
     parser = argparse.ArgumentParser()
     parser.add_argument('--vocab', default='/home/chenyo/OW_DOE/vae_ckpt/wen_chembl/vocab.txt',
                         help='vocab path where the motif is saved for graph generation')
-    parser.add_argument('--freeze', type=str2bool, default = False,
-                        help = 'Freeze the position of the process condition, default condition is freeze')
+    parser.add_argument('--freeze', type=str, default = None)
     parser.add_argument('--model', default='/home/chenyo/OW_DOE/vae_data/wen_chembl/model.ckpt', 
                         help='model save path')
     # parser.add_argument('--pvk_data', default = '/home/chenyo/OW_DOE/Environments/PvkAdditives/cycle0/cycle0.csv', type=str,
@@ -25,6 +25,8 @@ def PSOArgs():
                         help='the search space for initializing the PSO particles.')
     parser.add_argument('--pso_epoch', default=50, type=int,
                         help='how many iterations for running PSO.')
+    parser.add_argument('--decode', default='yes',type=str,
+                        help='choose to decode or not to decode in the optimization iteration.')
     parser.add_argument('--similarity_threshold', default=0.15, type=float,
                         help='the minimum similarity requirement for molecule generation.')
     parser.add_argument('--topn', default=100, type=int,

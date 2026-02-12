@@ -5,7 +5,7 @@ import pyfiglet
 
 #from hgraph import HierVAE, PairVocab, MoleculeDataset
 from Algorithms.PSO.Arg import PSOArgs
-from Algorithms.PSO.Create import create_pool_v3, sort_filter_and_reappend
+from Algorithms.PSO.Create import create_pool_v3, sort_filter_and_reappend, create_pool_freeze
 from Algorithms.PSO.ParticleSwarmOptimization import ParticleSwarmOptimization
 from Environments.Direct_Arylation.lib.Bounds import ary_bounds_v3
 from Environments.Direct_Arylation.lib.AryPredictor import AryTransform, AryEnsmblePredictor
@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
     # randomly choose one row as initial
     ary_dataframe = load_ary_data(args.ini_csv_path, index = None)
-    print('Origiinal Data', ary_dataframe)
+    print('Original Data', ary_dataframe)
     
     # map all things to proc_feautre
     proc_feature = ary_dataframe.columns.intersection(proc_feature.keys())
@@ -47,26 +47,38 @@ if __name__ == '__main__':
     # print('proc_feature', type(proc_feature), proc_feature)
     center_position = torch.cat((latent_vecs[0], torch.tensor(ary_dataframe[proc_feature].values, dtype=torch.float32)[0].to('cuda')), dim = 0)
 
+    # print('#########')
+    # print(ary_dataframe)
+    # print(torch.tensor(ary_dataframe[proc_feature].values))
 
     print(pyfiglet.figlet_format('Start Create Pool'))
 
     # initial pool sampled from the center position with radius = 2.5
-    pool = create_pool_v3(center_position, args.pop_size, bounds, args.radius, transform, predictor, proc_feature)
+    if args.freeze is None:
+        pool = create_pool_v3(center_position, args.pop_size, bounds, args.radius, transform, predictor, proc_feature)
+    else:
+        pool = create_pool_freeze(center_position, args.pop_size, bounds, args.radius, transform, predictor, proc_feature, args.freeze)
 
     for idx, particle in enumerate(pool):
         print(f'Particle {idx + 1}: {particle.smiles}')
     
     print(pyfiglet.figlet_format('Optimization'))
     for generation in range(args.generation):
-        pso = ParticleSwarmOptimization(pool, args.pso_epoch, transform, predictor, generation, radius=args.radius, sto = True)
-        pso.optimize()
+        # Here we can just delete the duplicate particles especially for pop_size > 3.
+        # Create new pool and add it into the old one.
+        # pool = sort_filter_and_reappend(pool, bounds, args.radius, args.pop_size, transform)
+        pso = ParticleSwarmOptimization(pool, args.pso_epoch, transform, predictor, generation , sto = False)
+        pso.optimize_freeze(args.freeze,args.decode)
         print(pool)
     pool = sorted(pool, key=lambda particle: particle.best_fitness, reverse=True)
 
     print(pyfiglet.figlet_format('Particles Rank'))
     for index, particle in enumerate(pool):
         print(f'\tRank {index + 1}')
-        print(f'Smiles: {particle.best_smiles}')
+        if args.freeze =='mol':
+            print(f'Smiles: {smi_data.iloc[0]}')
+        else:
+            print(f'Smiles: {particle.smiles}')
         print(f'Fitness: {particle.best_fitness:.4e}')
         print(f'Experiment Property:')
         print(particle.best_expt_property)

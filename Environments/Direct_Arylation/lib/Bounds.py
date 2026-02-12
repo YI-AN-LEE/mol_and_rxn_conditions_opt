@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 
 from Environments.Direct_Arylation.lib.utils import BOUNBD_PATH
+# 20240418
 
 def ary_bounds_v3(bound_file_path = BOUNBD_PATH, log = True, transpose = True):
     bounds = pd.read_csv(bound_file_path)
@@ -12,6 +13,14 @@ def ary_bounds_v3(bound_file_path = BOUNBD_PATH, log = True, transpose = True):
     upper_bounds = bounds['upper_bound'].values
     lower_bounds = bounds['lower_bound'].values
     dimensions = bounds['dimension'].values
+
+    # Get the rows where 'dimension' is not 'ls_vector'
+    mask = bounds['normalize'] == 1
+
+    # Get the values of the 'upper_bound', 'lower_bound' and 'dimension' columns
+    if log:
+        upper_bounds = np.where(mask, np.log1p(upper_bounds), upper_bounds)
+        lower_bounds = np.where(mask, np.log1p(lower_bounds), lower_bounds)
 
     # Initialize an empty list for the bounds
     lower_bounds_list = []

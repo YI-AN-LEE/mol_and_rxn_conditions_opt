@@ -8,7 +8,7 @@ import numpy as np
 #from hgraph import HierVAE, PairVocab
 from Algorithms.ABC.ArtificialBeeColony import ArtificialBeeColony
 from Algorithms.ABC.BeeArgs import BeeArgs
-from Algorithms.ABC.utils import create_swarm_abc
+from Algorithms.ABC.utils import create_swarm_abc, create_swarm_abc_freeze
 from Environments.PvkAdditives.lib.Pvk_Predictor import PvkTransform, Pvk_Ensemble_Predictor
 from Environments.PvkAdditives.lib.Bounds import pvk_bounds_v2
 import sys
@@ -76,7 +76,10 @@ if __name__ == '__main__':
     
     #center_position = torch.load(args.ini_tensor_path)[random.randint(0, init_expt_data.shape[0])]
     print(pyfiglet.figlet_format('Start Create Bee'))
-    employed_bees, onlooker_bees = create_swarm_abc(center_position, args.pop_size, bounds, args.radius, transform, predictor, proc_list, args.latent_size, vae_model) #freeze_position = 0)
+    if args.freeze is None:
+        employed_bees, onlooker_bees = create_swarm_abc(center_position, args.pop_size, bounds, args.radius, transform, predictor, proc_list, args.latent_size, vae_model)
+    else:
+        employed_bees, onlooker_bees = create_swarm_abc_freeze(center_position, args.pop_size, bounds, args.radius, transform, predictor, proc_list, args.latent_size, vae_model, args.freeze) #freeze_position = 0)
     
     # We print the initial Bee here
     
@@ -90,7 +93,7 @@ if __name__ == '__main__':
     dataset = 'pvk_additives'    
     print(pyfiglet.figlet_format('Optimization'))
     abc = ArtificialBeeColony(dataset, transform, predictor, employed_bees, onlooker_bees, args.max_trials, args.max_iterations, bounds, args.latent_size, vae_model) #transform, predictor, employed_bees, onlooker_bees, max_trials) 
-    abc.run()
+    abc.run(args.freeze, args.decode)
 
     print(pyfiglet.figlet_format('Bee Rank'))
-    abc.show_results()
+    abc.show_results(freeze = args.freeze, freeze_smiles=smi_data)
